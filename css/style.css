@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url("images/rubegoldberg.jpg");
+  background-image: url("../images/rubegoldberg.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -13,5 +13,9 @@ body {
 h1 {
   text-align: center;
   color: #ededed;
-  font-size: 15em;
+  font-size: 10em;
+}
+
+input {
+  height: 20px;
 }
