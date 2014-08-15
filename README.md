@@ -33,4 +33,20 @@ I would like each of us to have something added by then, in other words, by Sund
 we should push version 0.0.5 with!!!!! Tony, if you get blocked on something like Oauth and need more time, thats totally ok!
 Everyone else, if you are blocked please communicate with the rest of the team sooner rather than later. 
 
+==================
+#Style guide
+
+##All modules must use one of the following colors for their backgrounds. Note: these are approximate names.
+| Name | Hex Color Code |
+|:------:|:----------------:|
+| light-blue | #95D3E2 |
+| navy-blue | #254D78 |
+| purple | #553D4D |
+| red | #F23E32 |
+| orange | #FAB562 |
+| light-green | #D2E594 |
+| dark-green | #476054 |
+| yellow | #FEDB74 |
+| gray | #4D4550 |
+| beige | #E7E3E3 |
 
