@@ -1,0 +1,87 @@
+
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+function MainController(modules) {
+  this.modules = modules;
+  this.next_module = 0;
+  // var self = this
+
+  this.init = function() {
+    this.bindListeners()
+    this.modules.forEach(function(m) {
+      $(m).trigger('load',['somedata'])
+    })
+
+    $(document).trigger('next')
+  }
+
+  // this.bindListeners = function() {
+  //   $(document).on('next',function() {
+  //     $(self.modules[self.next_module]).trigger('start')
+  //     self.next_module++
+  //   })
+  // }
+  this.bindListeners = function() {
+    $(document).on('next',function() {
+      $(this.modules[this.next_module]).trigger('start')
+      this.next_module++
+    }.bind(this))
+  }
+}
+
+Module = {}
+Module.Vine = function() {
+  this.init = function() {
+    $(this).on('load',function() {
+      console.log("vine is loading")
+    })
+
+    $(this).on('start',function() {
+      console.log('vine is starting')
+      setTimeout(function() {
+        console.log('vine is done')
+        $(document).trigger('next')
+      },1000)
+    })
+  }
+  this.init()
+}
+
+Module.SoundCloud = function() {
+  this.init = function() {
+    $(this).on('load',function() {
+      console.log("soundCloud is loading")
+    })
+
+    $(this).on('start',function() {
+      console.log('soundCloud is starting')
+      setTimeout(function() {
+        console.log('soundCloud is done')
+        $(document).trigger('next')
+      },1000)
+    })
+  }
+
+  this.init()
+}
+
+
+
+// a given module is a JS object does a couple things:
+// - respond to option load event, which will do background tasks.
+// - respond to start event
+// - fire off a next event to the document when done
+// - it has access to a canvas with an id of 'page'. it must be clear when done.
+
+vine = new Module.Vine
+sc = new Module.SoundCloud
+modules = [sc,vine]
+new MainController(modules).init()
+</script>
+</head>
+<body>
+
+  </body>
+  </html>
