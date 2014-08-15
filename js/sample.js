@@ -26,4 +26,5 @@ Module.Sample = function() {
 
 Module.View = function () {
 
+
 }

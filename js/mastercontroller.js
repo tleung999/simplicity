@@ -10,6 +10,7 @@ function MainController(moduleList) {
   this.moduleIndex = 0;
 
   this.init = function() {
+    currentUserInfo = new CurrentUserInfo()
     this.moduleList.forEach(function(module) {
       $(module).trigger('load');
     });
@@ -26,5 +27,10 @@ function MainController(moduleList) {
 
 }
 
-// mainmodel = function MainController(event)
+function CurrentUserInfo() {
+  this.name = document.getElementById("form").name.value;
+  this.love = document.getElementById("form").love.value;
+  this.phone = document.getElementById("form").phone.value;
+}
+
 
