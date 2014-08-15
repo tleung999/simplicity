@@ -45,10 +45,3 @@ function CurrentUserInfo() {
 }
 
 
-function CurrentUserInfo() {
-  this.name = document.getElementById("form").name.value;
-  this.love = document.getElementById("form").love.value;
-  this.phone = document.getElementById("form").phone.value;
-}
-
-
