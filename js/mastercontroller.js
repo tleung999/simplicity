@@ -1,30 +1,48 @@
 $(document).ready(function() {
-  sample = new Module.Sample();
-  moduleList = [sample];
+  newTony = new Module.Tony();
+  newAlex = new Module.Alex();
+  moduleList = [newAlex,newTony];
   master = new MainController(moduleList);
   master.bindListeners();
 });
 
+Module = {};
+
 function MainController(moduleList) {
   this.moduleList = moduleList;
   this.moduleIndex = 0;
+  this.loadCount = 0;
+  var self = this;
 
   this.init = function() {
-    this.moduleList.forEach(function(module) {
-      $(module).trigger('load');
-    });
-    $(document).trigger('next');
+    currentUserInfo = new CurrentUserInfo();
+    $("#main-container").empty();
+    $(this.moduleList).trigger('load');
+
   };
 
   this.bindListeners = function() {
+    $(document).on('loaded',function() {
+      self.loadCount++;
+      if (self.loadCount === self.moduleList.length) {
+        $(document).trigger('next');
+      }
+    });
+
     $('#start').on('click', this.init.bind(master));
+
     $(document).on('next',function() {
       $(this.moduleList[this.moduleIndex]).trigger('start');
       this.moduleIndex++;
     }.bind(this));
   };
-
 }
 
-// mainmodel = function MainController(event)
+function CurrentUserInfo() {
+  this.name = document.getElementById("form").name.value;
+  this.love = document.getElementById("form").love.value;
+  this.phone = document.getElementById("form").phone.value;
+}
+
+
 
