@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  sample = new Module.Sample();
-  moduleList = [sample];
+  newTony = new Module.Tony();
+  moduleList = [newTony];
   master = new MainController(moduleList);
   master.bindListeners();
 });
@@ -8,18 +8,23 @@ $(document).ready(function() {
 function MainController(moduleList) {
   this.moduleList = moduleList;
   this.moduleIndex = 0;
+  this.loadCount = 0;
+  var self = this;
 
   this.init = function() {
-    this.moduleList.forEach(function(module) {
-      $(module).trigger('load');
+    $(this.moduleList).trigger('load');
+    $(document).on('loaded',function(event,data) {
+      self.loadCount++;
+      if (self.loadCount === self.moduleList.length) {
+        $(document).trigger('next');
+      }
     });
-    $(document).trigger('next');
   };
 
   this.bindListeners = function() {
     $('#start').on('click', this.init.bind(master));
-    $(document).on('next',function() {
-      $(this.moduleList[this.moduleIndex]).trigger('start');
+    $(document).on('next',function(event, data) {
+      $(this.moduleList[this.moduleIndex]).trigger('start', [data]);
       this.moduleIndex++;
     }.bind(this));
   };
