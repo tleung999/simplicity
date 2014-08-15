@@ -1,19 +1,25 @@
 $(document).ready(function() {
   sample = new Module.Sample();
-  moduleList = [sample];
+  alex = new Module.Alex();
+  moduleList = [sample,alex];
   master = new MainController(moduleList);
   master.bindListeners();
 });
+
+Module = {};
 
 function MainController(moduleList) {
   this.moduleList = moduleList;
   this.moduleIndex = 0;
 
   this.init = function() {
+    currentUserInfo = new CurrentUserInfo()
     this.moduleList.forEach(function(module) {
       $(module).trigger('load');
     });
     $(document).trigger('next');
+    $("#main-container").empty();
+
   };
 
   this.bindListeners = function() {
@@ -26,5 +32,10 @@ function MainController(moduleList) {
 
 }
 
-// mainmodel = function MainController(event)
+function CurrentUserInfo() {
+  this.name = document.getElementById("form").name.value;
+  this.love = document.getElementById("form").love.value;
+  this.phone = document.getElementById("form").phone.value;
+}
+
 
