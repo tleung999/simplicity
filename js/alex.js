@@ -27,6 +27,7 @@ Module.Alex = function() {
 Module.Alex.View = function () {
   $(document.body).css("background-image", "none")
   // blue
-  $(document.body).css("background-color", "#95D3E2")
-
+  $(document.body).css("background-color", "#95D3E2");
+  var helloWorld = "<h1 style='font-family:Helvetica;left:0;position: absolute;'>Hello " + currentUserInfo.name + "</h1>"
+  $('#main-container').append(helloWorld)
 }
