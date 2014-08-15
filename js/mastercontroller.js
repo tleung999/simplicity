@@ -1,9 +1,12 @@
 $(document).ready(function() {
   newTony = new Module.Tony();
-  moduleList = [newTony];
+  newAlex = new Module.Alex();
+  moduleList = [newAlex,newTony];
   master = new MainController(moduleList);
   master.bindListeners();
 });
+
+Module = {};
 
 function MainController(moduleList) {
   this.moduleList = moduleList;
@@ -12,24 +15,34 @@ function MainController(moduleList) {
   var self = this;
 
   this.init = function() {
+    currentUserInfo = new CurrentUserInfo();
+    $("#main-container").empty();
     $(this.moduleList).trigger('load');
-    $(document).on('loaded',function(event,data) {
+
+  };
+
+  this.bindListeners = function() {
+    $(document).on('loaded',function() {
       self.loadCount++;
       if (self.loadCount === self.moduleList.length) {
         $(document).trigger('next');
       }
     });
-  };
 
-  this.bindListeners = function() {
     $('#start').on('click', this.init.bind(master));
-    $(document).on('next',function(event, data) {
-      $(this.moduleList[this.moduleIndex]).trigger('start', [data]);
+
+    $(document).on('next',function() {
+      $(this.moduleList[this.moduleIndex]).trigger('start');
       this.moduleIndex++;
     }.bind(this));
   };
-
 }
 
-// mainmodel = function MainController(event)
+function CurrentUserInfo() {
+  this.name = document.getElementById("form").name.value;
+  this.love = document.getElementById("form").love.value;
+  this.phone = document.getElementById("form").phone.value;
+}
+
+
 

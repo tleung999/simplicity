@@ -1,31 +1,28 @@
-Module = {};
 
 Module.Tony = function() {
-  this.requestdata = "";
   var self = this;
   this.init = function() {
     $(this).on('load', function() {
-      console.log("loading sample app");
+      console.log("loading tony app")
       //preload some stuff to get your module ready
       var request = $.ajax({
-        url: "http://www.gw2spidy.com/api/v0.9/json/all-items/0",
+        url: "http://www.gw2spidy.com/api/v0.9/json/gem-price",
         type: 'GET',
       });
       request.done(function(data) {
-        self.data = data
-        $(document).trigger('loaded',data);
+        self.data = data;
+        $(document).trigger('loaded');
       });
     });
 
-    $(this).on('start', function(event, data) {
-      console.log("starting sample app");
-      //put your main application stuff here
-      // console.log (data);
-        Module.View.render(self.data);
-
+    $(this).on('start', function() {
+      console.log("starting tony app");
       setTimeout(function() {
-        console.log("sample app ending");
-      //Your module can only be 30 seconds long, you can remove the timeout if the animation is less than 30 seconds.
+        //Your module can only be 30 seconds long,
+        //you can remove the timeout if the animation is less than 30 seconds
+        //Enter Your View render here
+        Module.View.render(self.data);
+        console.log("tony app ending");
         $(document).trigger('next');
       },3000);
     });
@@ -34,11 +31,16 @@ Module.Tony = function() {
   this.init();
 };
 
-//build your view stuff and add it to the init function up above.   Use the start function to display your view.   DONT put your view call in the setTimeout.
+//build your view stuff and add it to the init function up above.
+//Use the start function to display your view.
+//DONT put your view call in the setTimeout.
 
 Module.View = {
   render: function(data) {
-    console.log(data)
-
+      //This is where your ajax data is appended to the DOM
+      $(document.body).css("background-image", "none")
+      $(document.body).css("background-color", "#FFFFFF")
+      $('#main-container').append('<p style="color:blue; font-size: xx-large">' + data.result.gem_to_gold + '</p>');
   }
 };
+
