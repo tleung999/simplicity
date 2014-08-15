@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   newTony = new Module.Tony();
   newAlex = new Module.Alex();
   moduleList = [newAlex,newTony];
@@ -18,7 +19,6 @@ function MainController(moduleList) {
     currentUserInfo = new CurrentUserInfo();
     $("#main-container").empty();
     $(this.moduleList).trigger('load');
-
   };
 
   this.bindListeners = function() {
@@ -44,5 +44,11 @@ function CurrentUserInfo() {
   this.phone = document.getElementById("form").phone.value;
 }
 
+
+function CurrentUserInfo() {
+  this.name = document.getElementById("form").name.value;
+  this.love = document.getElementById("form").love.value;
+  this.phone = document.getElementById("form").phone.value;
+}
 
 

@@ -12,6 +12,7 @@ Module.Alex = function() {
       setTimeout(function() {
         //Enter Your View Render here
         var view = new Module.Alex.View();
+
         console.log("alex app ending");
 
       //Your module can only be 30 seconds long, you can remove the timeout if the animation is less than 30 seconds.
@@ -29,5 +30,4 @@ Module.Alex.View = function () {
   $(document.body).css("background-image", "none")
   // blue
   $(document.body).css("background-color", "#95D3E2")
-
 }
