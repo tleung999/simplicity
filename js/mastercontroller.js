@@ -1,9 +1,12 @@
 $(document).ready(function() {
   sample = new Module.Sample();
-  moduleList = [sample];
+  alex = new Module.Alex();
+  moduleList = [sample,alex];
   master = new MainController(moduleList);
   master.bindListeners();
 });
+
+Module = {};
 
 function MainController(moduleList) {
   this.moduleList = moduleList;
@@ -15,6 +18,8 @@ function MainController(moduleList) {
       $(module).trigger('load');
     });
     $(document).trigger('next');
+    $("#main-container").empty();
+
   };
 
   this.bindListeners = function() {
