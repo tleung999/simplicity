@@ -13,9 +13,9 @@ Module.Alex = function() {
       setTimeout(function() {
         console.log("alex app ending");
 
-      //Your module can only be 30 seconds long, you can remove the timeout if the animation is less than 30 seconds.
-      $(document).trigger('next');
-    },3000);
+        //Your module can only be 30 seconds long, you can remove the timeout if the animation is less than 30 seconds.
+        $(document).trigger('next');
+      },3000);
     });
   };
   //initialize this Module
@@ -28,6 +28,4 @@ Module.Alex.View = function () {
   $(document.body).css("background-image", "none")
   // blue
   $(document.body).css("background-color", "#95D3E2");
-  var helloWorld = "<h1 style='font-family:Helvetica;left:0;position: absolute;'>Hello " + currentUserInfo.name + "</h1>"
-  $('#main-container').append(helloWorld)
 }
