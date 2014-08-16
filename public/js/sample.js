@@ -9,11 +9,14 @@ Module.Sample = function() {
 
     $(this).on('start', function() {
       console.log("starting sample app");
+      //cleans up the main main-container
+      $("#main-container").empty();
+      //Enter Your View Render here
+      Module.View.render();
+
       setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
-        //Enter Your View render here
-        Module.View.render();
         console.log("sample app ending");
         $(document).trigger('next');
       },3000);
