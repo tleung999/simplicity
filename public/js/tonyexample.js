@@ -18,7 +18,6 @@ Module.Tony = function() {
     $(this).on('start', function() {
       console.log("starting tony app");
       //cleans up main container
-      debugger
       $("#main-container").empty();
       //Enter Your View Render here
       $(document.body).css("background-image", "none")
