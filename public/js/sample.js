@@ -19,7 +19,7 @@ Module.Sample = function() {
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("sample app ending");
         $(document).trigger('next');
-      },3000);
+      },30000);
     });
   };
   //initialize this Module
