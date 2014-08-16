@@ -2,7 +2,7 @@ $(document).ready(function() {
   newPicture = new Module.Picture();
   newTony = new Module.Tony();
   newAlex = new Module.Alex();
-  moduleList = [newAlex,newTony, newPicture];
+  moduleList = [newAlex,newPicture, newTony];
   master = new MainController(moduleList);
   master.bindListeners();
 });
