@@ -58,10 +58,8 @@ function addingCSS(){
 function setupCamera(){
   var streaming = false,
   video        = document.querySelector('#video'),
-  cover        = document.querySelector('#cover'),
   canvas       = document.querySelector('#canvas'),
   photo        = document.querySelector('#photo'),
-  startbutton  = document.querySelector('#startbutton'),
   width = 300,
   height = 300;
 
