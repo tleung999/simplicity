@@ -27,5 +27,4 @@ Module.Alex = function() {
 Module.Alex.View = function () {
   $(document.body).css("background-image", "none")
   // blue
-  $(document.body).css("background-color", "#95D3E2");
 }
