@@ -17,7 +17,7 @@ Module.Picture = function() {
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("picture app ending");
         $(document).trigger('next');
-      },3000);
+      },20000);
     });
   };
   //initialize this Module
@@ -106,7 +106,7 @@ function setupCamera(){
 
 setInterval(function(){
   takepicture();
-  }, 20000);
+  }, 3000);
 canvasFollowingMouse();
 }
 
