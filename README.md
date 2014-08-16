@@ -1,30 +1,50 @@
-> **Note**: This branch (master) contains a skeleton without any app code, perfect for creating a _new_ application or challenge. If you're looking for an example app built with this skeleton, take a look at the [example](/../..//tree/example) branch which includes basic CRUD and RSpec tests.
+simplicity
 
-### Purpose
-The Sinatra Skeleton:
+DBC Final Project
 
-1. Provides a foundation for building challenges or creating a new Sinatra application.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
 
-### Quickstart
+WORKFLOW for core team
 
-1.  `bundle install`
-2.  `shotgun config.ru`
+We are going to do versions.
+Instead of mvp, we have version 0.0.1.
 
-As needed, create models & migrations with the `rake` tasks:
+This should have the following:
 
-```
-rake generate:migration  # Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks
-rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
-```
+splash page with functioning form
+  -whats your name?
+  -what is your phone number?
+  -what do you love?
 
-### Contributing
 
-We would love for you to help make the skeleton more awesome, There are three ways to contribute:
+1 event module that works smoothly.
 
-1. Ask for a bug fix or enhancement!
-2. Submit a pull request for a bug fix or enhancement!
-3. Code review an open pull request!
+This event module is just whatever we get done and added and merged to the repo first.
 
-Be prepared to give and receive specific, actionable, and kind feedback!
+Who's will be first? A little healthy competion never hurt anyone.
+
+When the second event module gets added, we have version 0.0.2.
+
+This will be our basic workflow. Pick either a feature on the splash page or end page.
+
+We should all be working toward the completion of a specific module that is completable by Sunday or sooner.
+
+I would like each of us to have something added by then, in other words, by Sunday at midnight
+we should push version 0.0.5 with!!!!! Tony, if you get blocked on something like Oauth and need more time, thats totally ok!
+Everyone else, if you are blocked please communicate with the rest of the team sooner rather than later.
+
+#Style guide
+
+##All modules must use one of the following colors for their backgrounds. Note: these are approximate names.
+| Name | Hex Color Code |
+|:------:|:----------------:|
+| light-blue | #95D3E2 |
+| navy-blue | #254D78 |
+| purple | #553D4D |
+| red | #F23E32 |
+| orange | #FAB562 |
+| light-green | #D2E594 |
+| dark-green | #476054 |
+| yellow | #FEDB74 |
+| gray | #4D4550 |
+| beige | #E7E3E3 |
+
