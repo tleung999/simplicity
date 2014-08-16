@@ -48,3 +48,7 @@ Everyone else, if you are blocked please communicate with the rest of the team s
 | gray | #4D4550 |
 | beige | #E7E3E3 |
 
+HOW TO MAKE A SUCCESSFUL PULL REQUEST
+-do not leave any variables that would pollute the global namespace.
+-if your script includes any dependancies (besides jQuery) delete those libraries in your .done function
+
