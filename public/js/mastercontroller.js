@@ -1,8 +1,8 @@
 $(document).ready(function() {
-
+  newPicture = new Module.Picture();
   newTony = new Module.Tony();
   newAlex = new Module.Alex();
-  moduleList = [newAlex,newTony];
+  moduleList = [newAlex,newTony, newPicture];
   master = new MainController(moduleList);
   master.bindListeners();
 });
@@ -17,7 +17,6 @@ function MainController(moduleList) {
 
   this.init = function() {
     currentUserInfo = new CurrentUserInfo();
-    $("#main-container").empty();
     $(this.moduleList).trigger('load');
   };
 
