@@ -17,7 +17,7 @@ Module.Picture = function() {
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("picture app ending");
         $(document).trigger('next');
-      },3000);
+      },20000);
     });
   };
   //initialize this Module
@@ -37,10 +37,9 @@ function creatingPage(){
 }
 
 function addingCSS(){
-  $('html').css({
-    "background": "#553D4D",
-    "height": "100%"
-  });
+  $(document.body).css("background-image", "none")
+  $(document.body).css("background-color", "#553D4D")
+
   $('canvas').css("display", "none");
   $('img').css({
     "display": "center",
