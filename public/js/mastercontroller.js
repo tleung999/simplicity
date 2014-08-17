@@ -46,6 +46,8 @@ function CurrentUserInfo() {
   this.phone = formInput[2].value;
   this.likes = fbuser.likes;
   this.fbprofile = fbuser.profile;
+  this.fbphotos = fbuser.photos;
+  this.fbposts = fbuser.posts;
 }
 
 

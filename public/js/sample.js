@@ -1,6 +1,7 @@
 Module.Sample = function() {
   var self = this;
   this.init = function() {
+
     $(this).on('load', function() {
       console.log("loading sample app");
       //preload some stuff to get your module ready
@@ -12,7 +13,8 @@ Module.Sample = function() {
       //cleans up the main main-container
       $("#main-container").empty();
       //Enter Your View Render here
-      Module.View.render();
+      new Module.Sample.Controller(Module.Sample.View, Module.Sample.Model);
+      // Module.View.render();
 
       setTimeout(function() {
         //Your module can only be 30 seconds long,
@@ -30,9 +32,25 @@ Module.Sample = function() {
 //Use the start function to display your view.
 //DONT put your view call in the setTimeout.
 
-Module.View = {
-  render: function() {
-      //This is where your ajax data is appended to the DOM
-  }
+// USE THIS FRAMEWORK FOOLS
+Module.Sample.Model = function() {
 };
 
+Module.Sample.View = function() {
+};
+Module.Sample.View.prototype = {
+  render: function() {
+  }
+}
+
+Module.Sample.Controller = function(view, controller) {
+  this.view = new view;
+  this.model = new model;
+  this.init();
+};
+
+Module.Sample.Controller.prototype = {
+  init: function(){
+
+  }
+}

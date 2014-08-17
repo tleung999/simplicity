@@ -13,7 +13,7 @@ Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Ru
 |:------:|:----------------:|
 | light-blue | #95D3E2 |
 | navy-blue | #254D78 |
-| purple | #553D4D |
+| purple | #825D75 |
 | red | #F23E32 |
 | orange | #FAB562 |
 | light-green | #D2E594 |
