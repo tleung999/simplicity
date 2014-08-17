@@ -73,6 +73,7 @@ function setupCamera(){
     video: true,
     audio: false
   },
+
   function(stream) {
     if (navigator.mozGetUserMedia) {
       video.mozSrcObject = stream;
@@ -83,6 +84,7 @@ function setupCamera(){
     window.s = stream;
     video.play();
   },
+
   function(err) {
     console.log("An error occured! " + err);
   }
