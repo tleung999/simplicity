@@ -2,7 +2,7 @@ $(document).ready(function() {
   newPicture = new Module.Picture();
   newTony = new Module.Tony();
   newAlex = new Module.Alex();
-  moduleList = [newAlex,newTony, newPicture];
+  moduleList = [newAlex,newPicture, newTony];
   master = new MainController(moduleList);
   master.bindListeners();
 });
@@ -17,6 +17,7 @@ function MainController(moduleList) {
 
   this.init = function() {
     currentUserInfo = new CurrentUserInfo();
+    console.log(currentUserInfo)
     $(this.moduleList).trigger('load');
   };
 
@@ -41,6 +42,10 @@ function CurrentUserInfo() {
   this.name = document.getElementById("form").name.value;
   this.love = document.getElementById("form").love.value;
   this.phone = document.getElementById("form").phone.value;
+  this.fblikes = fbuser.likes;
+  this.fbprofile = fbuser.profile;
+  this.fbphotos = fbuser.photos;
+  this.fbposts = fbuser.posts;
 }
 
 

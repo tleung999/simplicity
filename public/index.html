@@ -18,6 +18,12 @@
           <p>
             <input type="text" name="phone" placeholder="Phone Number" size="15">
           </p>
+          <p>
+            <fb:login-button scope="public_profile,user_likes,user_birthday,user_location,user_photos,user_education_history,user_website,email,read_stream" onlogin="checkLoginState();">
+            </fb:login-button>
+          </p>
+          <div id="status">
+          </div>
           <br>
           <button id="start" type="button">Start the application</button>
         </form>
@@ -26,6 +32,7 @@
   </body>
   <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
   <script src="js/mastercontroller.js"></script>
+  <script src="js/fb.js"></script>
   <script src="js/alex.js"></script>
   <script src="js/tonyexample.js"></script>
   <script src="js/picture.js"></script>
