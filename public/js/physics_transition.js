@@ -42,7 +42,7 @@ Module.PhysicsTransition.Model = function(){
                       ,'#FEDB74'
                       ,'#4D4550'
                       ,'#E7E3E3'];
-  this.transitionArray = ['js/ball_roll.js']
+  this.transitionArray = ['js/ball_roll.js'];
 }
 
 Module.PhysicsTransition.Model.prototype = {
@@ -107,7 +107,9 @@ Module.PhysicsTransition.View.prototype = {
   },
 
   addTransition: function(transition){
+    var physics = $('<script>').attr('src', 'js/physicsjs-0.6.0/physicsjs-full-0.6.0.min.js')
     var source = $('<script>').attr('src', transition)
+    $('body').append(physics)
     $('body').append(source)
   }
 }
