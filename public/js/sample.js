@@ -12,7 +12,7 @@ Module.Sample = function() {
       //cleans up the main main-container
       $("#main-container").empty();
       //Enter Your View Render here
-      Module.View.render();
+      Module.Sample.View.render();
 
       setTimeout(function() {
         //Your module can only be 30 seconds long,
@@ -30,7 +30,7 @@ Module.Sample = function() {
 //Use the start function to display your view.
 //DONT put your view call in the setTimeout.
 
-Module.View = {
+Module.Sample.View = {
   render: function() {
       //This is where your ajax data is appended to the DOM
   }

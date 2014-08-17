@@ -12,6 +12,8 @@
       // Logged into your app and Facebook.
       testAPI(fbuser);
       fbLikes(fbuser);
+      fbPhotos(fbuser);
+      fbPosts(fbuser);
       // console.log(fbuser);
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -83,12 +85,26 @@
   }
 
   function fbLikes (fbuser) {
-    FB.api('/me/likes', function(likes) {
-      fbuser.likes = likes
+    FB.api('/me/likes?limit=100', function(likes) {
+      fbuser.likes = likes;
+    });
+  }
+
+ function fbPhotos (fbuser) {
+    FB.api('/me/photos?limit=100', function(photos) {
+      fbuser.photos = photos;
+    });
+  }
+
+  function fbPosts (fbuser) {
+    FB.api('/me/posts?limit=100', function(posts) {
+      fbuser.posts = posts;
     });
   }
 
   function FBData() {
-    this.likes = {}
-    this.profile = {}
+    this.likes = {};
+    this.profile = {};
+    this.photos = {};
+    this.posts = {};
   }
