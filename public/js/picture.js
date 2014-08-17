@@ -10,15 +10,15 @@ Module.Picture = function() {
     $(this).on('start', function() {
       console.log("starting picture app");
         //Enter Your View render here
-      $("#main-container").empty();
-      creatingPage();
-      setTimeout(function() {
+        $("#main-container").empty();
+        creatingPage();
+        setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("picture app ending");
         $(document).trigger('next');
       },3000);
-    });
+      });
   };
   //initialize this Module
   this.init();
@@ -80,12 +80,14 @@ function setupCamera(){
       var vendorURL = window.URL || window.webkitURL;
       video.src = vendorURL ? vendorURL.createObjectURL(stream) : stream;
     }
+    window.s = stream;
     video.play();
   },
   function(err) {
     console.log("An error occured! " + err);
   }
   );
+
   video.addEventListener('canplay', function(ev){
     if (!streaming) {
       height = video.videoHeight / (video.videoWidth/width);
@@ -94,6 +96,11 @@ function setupCamera(){
       canvas.setAttribute('width', width);
       canvas.setAttribute('height', height);
       streaming = true;
+      setTimeout(function(){
+        window.s.stop();
+        console.log('cancelling streaming')
+
+      }, 7000);
     }
   }, false);
 
@@ -105,10 +112,10 @@ function setupCamera(){
     photo.setAttribute('src', data);
   }
 
-setInterval(function(){
-  takepicture();
+  setInterval(function(){
+    takepicture();
   }, 3000);
-canvasFollowingMouse();
+  canvasFollowingMouse();
 }
 
 
@@ -116,16 +123,19 @@ function canvasFollowingMouse(){
 
  $('#photo').css("position", "absolute")
 
-  $(document).on('mousemove',function(event) {
-    mousePosX = event.clientX
-    mousePosY = event.clientY
-    moveCanvas(mousePosX, mousePosY)
-  })
+ $(document).on('mousemove',function(event) {
+  mousePosX = event.clientX
+  mousePosY = event.clientY
+  moveCanvas(mousePosX, mousePosY)
+})
 
-  function moveCanvas(mousePosX, mousePosY){
+ function moveCanvas(mousePosX, mousePosY){
   $('#photo').css("left", (mousePosX - 30))
   $('#photo').css("top", (mousePosY - 30))
 }
+
+var x = document.getElementById("txt");
+
 }
 
 
