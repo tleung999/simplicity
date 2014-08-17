@@ -5,6 +5,7 @@ $(document).ready(function() {
   moduleList = [newAlex,newPicture, newTony];
   master = new MainController(moduleList);
   master.bindListeners();
+  // musicController()
 });
 
 Module = {};
@@ -39,13 +40,15 @@ function MainController(moduleList) {
 }
 
 function CurrentUserInfo() {
-  this.name = document.getElementById("form").name.value;
-  this.love = document.getElementById("form").love.value;
-  this.phone = document.getElementById("form").phone.value;
-  this.fblikes = fbuser.likes;
+  var formInput = $("#form input").serializeArray();
+  this.name = formInput[0].value;
+  this.love = formInput[1].value;
+  this.phone = formInput[2].value;
+  this.likes = fbuser.likes;
   this.fbprofile = fbuser.profile;
   this.fbphotos = fbuser.photos;
   this.fbposts = fbuser.posts;
 }
+
 
 
