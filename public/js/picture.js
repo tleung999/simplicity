@@ -18,7 +18,7 @@ Module.Picture = function() {
         console.log("picture app ending");
         $(document).trigger('next');
       },20000);
-    });
+      });
   };
   //initialize this Module
   this.init();
@@ -54,13 +54,14 @@ function addingCSS(){
   setupCamera();
 }
 
+var streaming = false;
+var video = document.querySelector('#video');
+var canvas = document.querySelector('#canvas');
+var photo = document.querySelector('#photo');
+var width = 300;
+var height = 300;
+
 function setupCamera(){
-  var streaming = false,
-  video        = document.querySelector('#video'),
-  canvas       = document.querySelector('#canvas'),
-  photo        = document.querySelector('#photo'),
-  width = 300,
-  height = 300;
 
   navigator.getMedia = ( navigator.getUserMedia ||
    navigator.webkitGetUserMedia ||
@@ -122,9 +123,9 @@ function canvasFollowingMouse(){
 
  $('#photo').css("position", "absolute")
 
+ var mousePosX = event.clientX
+ var mousePosY = event.clientY
  $(document).on('mousemove',function(event) {
-  mousePosX = event.clientX
-  mousePosY = event.clientY
   moveCanvas(mousePosX, mousePosY)
 })
 
@@ -132,9 +133,6 @@ function canvasFollowingMouse(){
   $('#photo').css("left", (mousePosX - 30))
   $('#photo').css("top", (mousePosY - 30))
 }
-
-var x = document.getElementById("txt");
-
 }
 
 
