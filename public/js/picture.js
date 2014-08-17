@@ -135,6 +135,7 @@ function canvasFollowingMouse(){
   $('#photo').css("left", (mousePosX - 30))
   $('#photo').css("top", (mousePosY - 30))
 }
+
 }
 
 
