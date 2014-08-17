@@ -42,8 +42,10 @@ function CurrentUserInfo() {
   this.name = document.getElementById("form").name.value;
   this.love = document.getElementById("form").love.value;
   this.phone = document.getElementById("form").phone.value;
-  this.likes = fbuser.likes;
+  this.fblikes = fbuser.likes;
   this.fbprofile = fbuser.profile;
+  this.fbphotos = fbuser.photos;
+  this.fbposts = fbuser.posts;
 }
 
 
