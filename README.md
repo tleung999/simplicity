@@ -2,39 +2,13 @@ simplicity
 
 DBC Final Project
 
+Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Rube_Goldberg_machine). It is modular in design in hopes of making it as easy as possible for public contributions!
 
-WORKFLOW for core team
+#How to make a succesful pull request to add an event to our machine:
 
-We are going to do versions.
-Instead of mvp, we have version 0.0.1.
+##Style guide
 
-This should have the following:
-
-splash page with functioning form
-  -whats your name?
-  -what is your phone number?
-  -what do you love?
-
-
-1 event module that works smoothly.
-
-This event module is just whatever we get done and added and merged to the repo first.
-
-Who's will be first? A little healthy competion never hurt anyone.
-
-When the second event module gets added, we have version 0.0.2.
-
-This will be our basic workflow. Pick either a feature on the splash page or end page.
-
-We should all be working toward the completion of a specific module that is completable by Sunday or sooner.
-
-I would like each of us to have something added by then, in other words, by Sunday at midnight
-we should push version 0.0.5 with!!!!! Tony, if you get blocked on something like Oauth and need more time, thats totally ok!
-Everyone else, if you are blocked please communicate with the rest of the team sooner rather than later.
-
-#Style guide
-
-##All modules must use one of the following colors for their backgrounds. Note: these are approximate names.
+###All modules must use one of the following colors for their backgrounds. Note: these are approximate names.
 | Name | Hex Color Code |
 |:------:|:----------------:|
 | light-blue | #95D3E2 |
@@ -48,7 +22,31 @@ Everyone else, if you are blocked please communicate with the rest of the team s
 | gray | #4D4550 |
 | beige | #E7E3E3 |
 
-HOW TO MAKE A SUCCESSFUL PULL REQUEST
--do not leave any variables that would pollute the global namespace.
--if your script includes any dependancies (besides jQuery) delete those libraries in your .done function
+###All modules should last between 5 and 30 seconds
+
+###The tone should be lighthearted and fun
+
+###It should have the feel of a Rube Goldberg Machine
+
+###It should be pretty
+
+##Technical guide
+###Fork the repo to your Github account
+###Clone the fork down onto your local machine
+###Create a new file in public/js YOURMODULE.js (with the name of your module)
+###Copy the contents of the file public/js/sample.js into YOURMODULE.js. This will serve as your template.
+###Do not delete anything from the template file!(accept setTimeout, if your module is shorter than 30, which it should be!)
+###Put your view in the render function in View.
+###In public/js/mastercontroller.js, add the following line to the $(document).ready function:
+```javascript
+  newYourModule = new Module.YourModule();
+alert(s);
+```
+and add newYourModule to the moduleList array.
+
+###Have Fun!!
+
+###Do not leave any variables that would pollute the global namespace.
+###if your script includes any dependancies (besides jQuery) delete those libraries in your .done function
+
 
