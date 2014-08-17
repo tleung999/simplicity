@@ -24,3 +24,12 @@ input {
 #status {
   color: white;
 }
+
+audio {
+   display:none;
+}
+
+#volume {
+  color: white;
+  margin: 1.5em;
+}
