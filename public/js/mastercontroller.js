@@ -2,8 +2,7 @@ $(document).ready(function() {
   newPicture = new Module.Picture();
   newTony = new Module.Tony();
   newAlex = new Module.Alex();
-  newTransition = new Module.PhysicsTransition();
-  moduleList = [newAlex,newTransition,newPicture,newTransition,newTony];
+  moduleList = [newAlex,new Module.PhysicsTransition(),newPicture,new Module.PhysicsTransition(),newAlex];
   master = new MainController(moduleList);
   master.bindListeners();
 });
