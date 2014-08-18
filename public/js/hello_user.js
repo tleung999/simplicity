@@ -47,7 +47,7 @@ Module.HelloUser.View = function () {
                         "unparalleled"];
   var compliment = complimentArray[Math.floor(Math.random() * complimentArray.length)];
   $(document.body).css("background-image", "none");
-  var helloUser = "<h1 class='animated bounceInRight' style='font-family:Helvetica;'>Hello " + currentUserInfo.name + "! <br> You are " + compliment + "!</h1>";
+  var helloUser = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello " + currentUserInfo.name + "! <br> You are " + compliment + "!</h1>";
   setTimeout(function(){
     $("#main-container").append(helloUser);
   }, 500)

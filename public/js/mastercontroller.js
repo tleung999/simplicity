@@ -97,7 +97,6 @@ BackgroundColorPicker.Model = function(){
                       ,'#FEDB74'
                       ,'#4D4550'
                       ,'#E7E3E3'];
-  this.transitionArray = ['js/ball_roll.js','js/crazy_dominoes.js'];
 }
 
 BackgroundColorPicker.Model.prototype = {
