@@ -14,6 +14,11 @@ Physics(function( world ){
 
   world.add( renderer );
 
+  // render on each step
+  world.on('step', function () {
+      world.render();
+  });
+
   var dominoes = [];
     for ( var i = 0, l = 35; i < l; ++i ){
 
@@ -31,7 +36,7 @@ Physics(function( world ){
             ,angleIndicator: '#FFFFFF'
         }
       }));
-    }
+    };
 
   world.add( dominoes );
 
@@ -43,8 +48,13 @@ Physics(function( world ){
     radius: 20
   });
 
-  world.add( circle )
-  world.render()
+  world.add( circle );
+  // setup ticker
+  Physics.util.ticker.on(function( time, dt ){
+    world.step( time );
+  });
+  // start the ticker
+  Physics.util.ticker.start();
 
 
 
