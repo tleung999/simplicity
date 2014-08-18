@@ -1,24 +1,21 @@
+Physics(function( world ){
+  var canvasHeight = (window.innerHeight/10)*9
+  var canvasWidth = (window.innerWidth/10)*9
+  var renderer = Physics.renderer('canvas', {
+    el: 'viewport',
+    width: canvasWidth,
+    height: canvasHeight
+  });
 
-function MainController(world, view, bodyConstructor){
-  this.world = world;
-  this.view = view;
-  this.bodyConstructor = bodyConstructor;
-  this.init();
-}
-
-MainController.prototype = {
-  init: function(){}
-}
-
-function MainView(){}
-function BodyConstructor(){}
+  world.add( renderer );
 
 
-Physics(function(){
-  var world = this;
-  var mainController = new MainController(world
-                                          ,MainView
-                                          ,BodyConstructor);
-
+  var circle = Physics.body('circle', {
+    x: 140,
+    y: (canvasHeight/4),
+    vx: .75,
+    radius: 50
+  });
+  world.add( circle );
+  world.render();
 })
-
