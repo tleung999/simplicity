@@ -37,11 +37,11 @@ Module.Sample.Model = function() {
 };
 
 Module.Sample.View = function() {
-    $('head').prepend('<script src="http://threejs.org/build/three.min.js"></script>')
-  $('#main-container').css("height", "100%").css("width", "50%")
 };
 Module.Sample.View.prototype = {
   render: function() {
+    $('head').prepend('<script src="http://threejs.org/build/three.min.js"></script>')
+  $('#main-container').css("height", "100%").css("width", "50%")
   }
 }
 

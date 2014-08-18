@@ -83,12 +83,13 @@ function setupCamera(){
     window.s = stream;
     video.play();
   },
+
   function(err) {
     console.log("An error occured! " + err);
   }
   );
 
-  video.addEventListener('canplay', function(ev){
+  video.addEventListener('canplay', function(){
     if (!streaming) {
       height = video.videoHeight / (video.videoWidth/width);
       video.setAttribute('width', width);

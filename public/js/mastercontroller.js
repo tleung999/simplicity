@@ -1,8 +1,9 @@
 $(document).ready(function() {
 	newPicture = new Module.Picture();
 	newTony = new Module.Tony();
-	newAlex = new Module.Alex();
-	moduleList = [newAlex,newPicture, newTony];
+
+	newHelloUser = new Module.HelloUser();
+	moduleList = [newHelloUser,newPicture, newTony];
 	master = new MainController(moduleList);
 	master.bindListeners();
 	musicController();
