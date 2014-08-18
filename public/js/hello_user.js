@@ -18,7 +18,7 @@ Module.HelloUser = function() {
         console.log("alex app ending");
       //Your module can only be 30 seconds long, you can remove the timeout if the animation is less than 30 seconds.
       $(document).trigger('next');
-    },3000);
+    },3500);
     });
   };
   //initialize this Module
@@ -27,9 +27,29 @@ Module.HelloUser = function() {
 
 //build your view stuff and add it to the init function up above.   Use the start function to display your view.   DONT put your view call in the setTimeout.
 
+
 Module.HelloUser.View = function () {
+  var complimentArray = ["stupendous",
+                        "exceptional",
+                        "beautiful",
+                        "dazzling",
+                        "enchanting",
+                        "first-class",
+                        "magnanimous",
+                        "magnificent",
+                        "marvelous",
+                        "radiant",
+                        "remarkable",
+                        "spectacular",
+                        "splendid",
+                        "stunning",
+                        "tremendous",
+                        "unparalleled"];
+  var compliment = complimentArray[Math.floor(Math.random() * complimentArray.length)];
   $(document.body).css("background-image", "none");
   $(document.body).css("background-color", "#95D3E2");
-  var helloUser = "<h1 class='animated bounceOutLeft' style='font-family:Helvetica;left:0;position: absolute;'>Hello " + currentUserInfo.name + "</h1>";
-  $("#main-container").append(helloUser);
+  var helloUser = "<h1 class='animated bounceInRight' style='font-family:Helvetica;'>Hello " + currentUserInfo.name + "! <br> You are " + compliment + "!</h1>";
+  setTimeout(function(){
+    $("#main-container").append(helloUser);
+  }, 500)
 };
