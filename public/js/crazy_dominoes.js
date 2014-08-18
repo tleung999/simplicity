@@ -43,7 +43,7 @@ Physics(function( world ){
   var circle = Physics.body('circle', {
     x: 50,
     y: viewHeight-200,
-    vx: .1,
+    vx: .08,
     radius: 20
   });
 
@@ -65,5 +65,12 @@ Physics(function( world ){
     aabb: viewportBounds,
     restitution: 0.3
   }) );
+
+  // Move to next event
+  setTimeout(function() {
+    $('canvas').remove();
+    Physics.util.ticker.stop();
+    $(document).trigger('next');
+  },10000);
 
 })
