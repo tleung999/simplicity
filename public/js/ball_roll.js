@@ -55,6 +55,7 @@ Physics(function( world ){
 
     if (ballPosX > canvasWidth+ballRadius+ballPadding){
       $('canvas').remove();
+       Physics.util.ticker.stop();
       $(document).trigger('next');
     }
   }.bind(circle));
@@ -94,4 +95,6 @@ Physics(function( world ){
 
   // start the ticker
   Physics.util.ticker.start();
+
+
 })
