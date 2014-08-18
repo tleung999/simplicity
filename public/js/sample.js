@@ -43,9 +43,9 @@ Module.Sample.View.prototype = {
   }
 };
 
-Module.Sample.Controller = function(view, controller) {
-  this.view = new view();
-  this.model = new model();
+Module.Sample.Controller = function(view, model) {
+  this.view = view;
+  this.model = model;
   this.init();
 };
 
