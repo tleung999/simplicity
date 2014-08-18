@@ -6,9 +6,7 @@ $(document).ready(function() {
                 new Module.PhysicsTransition(),
                 newPicture,
                 new Module.PhysicsTransition(),
-                newTagCanvas,
-                new Module.PhysicsTransition(),
-                newCube];
+                newTagCanvas];
   master = new MainController(moduleList);
   master.bindListeners();
   musicController();
