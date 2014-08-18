@@ -23,7 +23,7 @@ Physics(function( world ){
   // ------------------------------------ //
   // Add effects simulating gravity
   // boundaries for the canvas.
-  var bounds = Physics.aabb(0, 0, canvasWidth+(canvasWidth/6), canvasHeight);
+  var bounds = Physics.aabb(0, 0, canvasWidth+300, canvasHeight-100);
 
   world.add( Physics.behavior('edge-collision-detection', {
     aabb: bounds,
@@ -33,7 +33,7 @@ Physics(function( world ){
   world.add( Physics.behavior('constant-acceleration') );
   world.add( Physics.behavior('body-impulse-response') );
   world.add( Physics.behavior('body-collision-detection') );
-  world.add( Physics.behavior('sweep-prune') );
+  world.add( Physics.behavior('sweep-prune'));
 
 
   // ------------------------------------ //
@@ -46,6 +46,31 @@ Physics(function( world ){
   });
 
   world.add( circle );
+
+  // ------------------------------------ //
+  // Create Shelf for ball
+  var shelf = []
+  for ( var i = 100; i < Math.min(canvasWidth - 100, 1500); i += 5 ){
+
+    //format of line (y = mx + b)
+    var intercept = (canvasHeight / 4);
+    var lineSlope = (i/6)
+    l = shelf.push(
+      Physics.body('circle', {
+          x: i
+          ,y: lineSlope + intercept
+          ,radius: 1
+          ,restitution: 0.5
+          ,mass: .5
+      })
+    );
+  };
+
+  for (var i = 0; i < shelf.length; i++){
+      shelf[ i ].treatment = 'static';
+    }
+
+  world.add( shelf );
 
 
   // ------------------------------------ //
