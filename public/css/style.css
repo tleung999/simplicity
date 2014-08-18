@@ -18,6 +18,12 @@ h1 {
   font-size: 10em;
 }
 
+h3 {
+  font-family: Helvetica;
+  text-align: left;
+  color: #F23E32;
+}
+
 input {
   height: 20px;
 }

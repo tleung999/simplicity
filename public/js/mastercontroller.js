@@ -106,8 +106,7 @@ BackgroundColorPicker.Model.prototype = {
     return this.colorArray[randomIndex];
   },
 }
-// -------------------------------------------------------------- //
-// -------------------------------------------------------------- //
+
 BackgroundColorPicker.Controller = function(view, model) {
   this.view  = new view;
   this.model = new model;
