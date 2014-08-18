@@ -11,7 +11,7 @@ $(document).ready(function() {
   // moduleList = [newTagCanvas]
   master = new MainController(moduleList);
   master.bindListeners();
-  musicController();
+  MusicController();
 });
 
 Module = {};
@@ -41,6 +41,7 @@ function MainController(moduleList) {
     $(document).on('next',function() {
       $(this.moduleList[this.moduleIndex]).trigger('start');
       this.moduleIndex++;
+      new BackgroundColorPicker.Controller(BackgroundColorPicker.View,BackgroundColorPicker.Model)
     }.bind(this));
   };
 }
@@ -57,7 +58,7 @@ function CurrentUserInfo() {
   this.fbplaces = fbuser.places;
 }
 
-function musicController(){
+function MusicController(){
 	$('#audio')[0].volume = 0;
 	$('#volume').click(toggleVolumeIcon);
 	$('#volume').click(toggleVolume);
@@ -82,3 +83,58 @@ function toggleVolume(){
 		$audio.volume = 0;
 	}
 }
+
+BackgroundColorPicker = {}
+
+BackgroundColorPicker.Model = function(){
+  this.colorArray =  ['#95D3E2'
+                      ,'#254D78'
+                      ,'#825D75'
+                      ,'#F23E32'
+                      ,'#FAB562'
+                      ,'#D2E594'
+                      ,'#476054'
+                      ,'#FEDB74'
+                      ,'#4D4550'
+                      ,'#E7E3E3'];
+  this.transitionArray = ['js/ball_roll.js','js/crazy_dominoes.js'];
+}
+
+BackgroundColorPicker.Model.prototype = {
+  produceRandomColor: function(){
+    var colorArrayLength = this.colorArray.length;
+    var randomIndex = Math.floor((Math.random() * colorArrayLength));
+    return this.colorArray[randomIndex];
+  },
+}
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+BackgroundColorPicker.Controller = function(view, model) {
+  this.view  = new view;
+  this.model = new model;
+  this.init();
+}
+
+BackgroundColorPicker.Controller.prototype = {
+  init: function(){
+    var color = this.model.produceRandomColor();
+    this.view.removeBackground;
+    this.view.render(color);
+  }
+}
+
+BackgroundColorPicker.View = function() {}
+
+BackgroundColorPicker.View.prototype = {
+  render: function(color, transition){
+    this.addBackgroundColor(color);
+  },
+
+  addBackgroundColor: function(color) {
+    // add background color
+    $(document.body).css("background-color", color)
+  },
+}
+
+
+
