@@ -1,6 +1,6 @@
 Physics(function( world ){
-  var viewWidth = window.innerWidth
-      ,viewHeight = window.innerHeight
+  var viewWidth = (window.innerWidth/10)*9
+      ,viewHeight = (window.innerHeight/10)*9
       // bounds of the window
       ,viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight)
       ,renderer
@@ -11,7 +11,6 @@ Physics(function( world ){
     ,width: viewWidth
     ,height: viewHeight
   });
-
   world.add( renderer );
 
   // render on each step
@@ -56,6 +55,15 @@ Physics(function( world ){
   // start the ticker
   Physics.util.ticker.start();
 
+  // Add gravity
+  world.add( Physics.behavior('constant-acceleration') );
+  world.add( Physics.behavior('body-impulse-response') );
+  world.add( Physics.behavior('body-collision-detection') );
+  world.add( Physics.behavior('sweep-prune') );
 
+  world.add( Physics.behavior('edge-collision-detection', {
+    aabb: viewportBounds,
+    restitution: 0.3
+  }) );
 
 })
