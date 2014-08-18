@@ -1,39 +1,42 @@
 <!DOCTYPE html>
-  <head>
-    <!-- Latest compiled and minified CSS -->
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <div id="main-container">
-      <h1>Simplicity</h1>
-      <div id="userform">
-        <form id="form">
-          <p>
-            <input type="text" name="name" placeholder="Your Full Name" size="50">
-          </p>
-          <p>
-            <input type="text" name="love" placeholder="Something you love" size="50">
-          </p>
-          <p>
-            <input type="text" name="phone" placeholder="Phone Number" size="15">
-          </p>
-          <p>
-            <fb:login-button scope="public_profile,user_likes,user_birthday,user_location,user_photos,user_education_history,user_website,email,read_stream" onlogin="checkLoginState();">
-            </fb:login-button>
-          </p>
-          <div id="status">
-          </div>
-          <br>
-          <button id="start" type="button">Start the application</button>
-        </form>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="font-awesomes/css/font-awesome.min.css">
+</head>
+<body>
+  <div id="main-container">
+    <i id="volume" class="fa fa-volume-off fa-5x"></i>
+    <h1>Simplicity</h1>
+    <div id="userform">
+      <form id="form">
+        <p>
+          <input type="text" name="name" placeholder="Your Full Name" size="50">
+        </p>
+        <p>
+          <input type="text" name="love" placeholder="Something you love" size="50">
+        </p>
+        <p>
+          <input type="text" name="phone" placeholder="Phone Number" size="15">
+        </p>
+        <p>
+          <fb:login-button scope="public_profile,user_likes,user_birthday,user_location,user_education_history,user_website,email" onlogin="checkLoginState();">
+        </fb:login-button>
+      </p>
+      <div id="status">
       </div>
-    </div>
-  </body>
-  <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
-  <script src="js/mastercontroller.js"></script>
-  <script src="js/fb.js"></script>
-  <script src="js/alex.js"></script>
-  <script src="js/tonyexample.js"></script>
-  <script src="js/picture.js"></script>
+      <br>
+      <button id="start" type="button">Start the application</button>
+    </form>
+  </div>
+</div>
+</body>
+<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+<script src="js/mastercontroller.js"></script>
+<script src="js/fb.js"></script>
+<script src="js/alex.js"></script>
+<script src="js/tonyexample.js"></script>
+<script src="js/picture.js"></script>
+<audio control volume='0' id='audio' autoplay="true" src="music/rollin.mp3">
 </html>

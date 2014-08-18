@@ -25,4 +25,12 @@ input {
   color: white;
 }
 
+audio {
+   display:none;
+}
+
+#volume {
+  color: white;
+  padding: .5em;
+}
 

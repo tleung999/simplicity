@@ -37,6 +37,8 @@ Module.Sample.Model = function() {
 };
 
 Module.Sample.View = function() {
+    $('head').prepend('<script src="http://threejs.org/build/three.min.js"></script>')
+  $('#main-container').css("height", "100%").css("width", "50%")
 };
 Module.Sample.View.prototype = {
   render: function() {
@@ -51,6 +53,41 @@ Module.Sample.Controller = function(view, controller) {
 
 Module.Sample.Controller.prototype = {
   init: function(){
+    animate();
+    var camera, scene, renderer;
+    var geometry, material, mesh;
+    function init() {
 
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+      camera.position.z = 300;
+
+      scene = new THREE.Scene();
+
+      geometry = new THREE.BoxGeometry(150, 150, 150, 150);
+  //var url = //Enter the variable for the new link here
+      material = new THREE.MeshBasicMaterial({
+        map: THREE.ImageUtils.loadTexture('https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/t1.0-9/196551_10100380941062870_6244660_n.jpg'),
+      });
+
+      mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);
+
+      renderer = new THREE.CanvasRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      $('#main-container').append(renderer.domElement);
+
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      mesh.rotation.x += 0.01;
+      mesh.rotation.y += 0.01;
+
+      renderer.render(scene, camera);
+     }
+
+
+  })
   }
 }
