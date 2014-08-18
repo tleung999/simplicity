@@ -66,10 +66,11 @@ Physics(function( world ){
     restitution: 0.3
   }) );
 
-  // Move to next event
+  // // Move to next event
   setTimeout(function() {
     $('canvas').remove();
     Physics.util.ticker.stop();
+    console.log("finished with crazy dominoes")
     $(document).trigger('next');
   },10000);
 
