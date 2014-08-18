@@ -70,7 +70,8 @@ function buildHTML() {
   $("#main-container").append(canvasHTML);
   $("#main-container").append(picturebase);
   photolist = currentUserInfo.fbphotos.data;
-  if (photolist.length === 0) {
+  console.log(photolist)
+  if (photolist === undefined || photolist.length === 0) {
     for (var a=0; a<genericphotos.length; a++) {
       photolink = '<li><a><img src="'+ genericphotos[a] +
                   '" width="50%" height="50%" ></a></li>';
