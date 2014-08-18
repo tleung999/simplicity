@@ -4,7 +4,9 @@ $(document).ready(function() {
   newTagCanvas = new Module.TagCanvas();
   newWemo = new Module.Wemo();
   moduleList = [newHelloUser,
+                new Module.PhysicsTransition(),
                 newPicture,
+                new Module.PhysicsTransition(),
                 newTagCanvas];
   // moduleList = [newTagCanvas]
   master = new MainController(moduleList);
