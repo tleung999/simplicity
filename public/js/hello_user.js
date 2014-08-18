@@ -11,7 +11,7 @@ Module.HelloUser = function() {
       //cleans up the main container
       $("#main-container").empty();
         //Enter Your View Render here
-      var view = new Module.Alex.View();
+      var view = new Module.HelloUser.View();
 
       setTimeout(function() {
         $("#main-container").empty();
