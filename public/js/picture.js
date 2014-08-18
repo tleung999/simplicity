@@ -82,7 +82,6 @@ function setupCamera(){
     }
     window.s = stream;
     video.play();
-
   },
   function(err) {
     photo.setAttribute('src', 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/t1.0-9/196551_10100380941062870_6244660_n.jpg')
