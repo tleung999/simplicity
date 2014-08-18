@@ -3,7 +3,7 @@ $(document).ready(function() {
   newTony = new Module.Tony();
   newAlex = new Module.Alex();
   newTransition = new Module.PhysicsTransition();
-  moduleList = [newAlex,newTransition,newPicture, newTony];
+  moduleList = [newAlex,newTransition,newPicture,newTransition,newTony];
   master = new MainController(moduleList);
   master.bindListeners();
 });
@@ -46,5 +46,3 @@ function CurrentUserInfo() {
   this.likes = fbuser.likes;
   this.fbprofile = fbuser.profile;
 }
-
-
