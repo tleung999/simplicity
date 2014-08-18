@@ -1,12 +1,11 @@
 $(document).ready(function() {
   newPicture = new Module.Picture();
-  newTony = new Module.Tony();
-  newAlex = new Module.Alex();
-  newWemo = new Module.Wemo();
+  newHelloUser = new Module.HelloUser();
   newTagCanvas = new Module.TagCanvas();
-  moduleList = [newTony];
-  master = new MainController(moduleList);
-  master.bindListeners();
+	moduleList = [newHelloUser,newPicture, newTagCanvas];
+	master = new MainController(moduleList);
+	master.bindListeners();
+	musicController();
 });
 
 Module = {};
@@ -41,14 +40,42 @@ function MainController(moduleList) {
 }
 
 function CurrentUserInfo() {
-  this.name = document.getElementById("form").name.value;
-  this.love = document.getElementById("form").love.value;
-  this.phone = document.getElementById("form").phone.value;
-  this.fblikes = fbuser.likes;
+  var formInput = $("#form input").serializeArray();
+  this.name = formInput[0].value;
+  this.love = formInput[1].value;
+  this.phone = formInput[2].value;
+  this.likes = fbuser.likes;
   this.fbprofile = fbuser.profile;
   this.fbphotos = fbuser.photos;
   this.fbposts = fbuser.posts;
   this.fbplaces = fbuser.places;
 }
+
+function musicController(){
+	$('#audio')[0].volume = 0;
+	$('#volume').click(toggleVolumeIcon);
+	$('#volume').click(toggleVolume);
+}
+
+function toggleVolumeIcon(){
+	var $this = $(this);
+	if($this.hasClass('fa-volume-up')){
+		$this.removeClass('fa-volume-up').addClass('fa-volume-off');
+	}
+	else{
+		$this.removeClass('fa-volume-off').addClass('fa-volume-up');
+	}
+}
+
+function toggleVolume(){
+	var $audio = $('#audio')[0];
+	if ($audio.volume === 0) {
+		$audio.volume = 1.0;
+	}
+	else {
+		$audio.volume = 0;
+	}
+}
+
 
 

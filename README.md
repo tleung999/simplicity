@@ -13,7 +13,7 @@ Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Ru
 |:------:|:----------------:|
 | light-blue | #95D3E2 |
 | navy-blue | #254D78 |
-| purple | #553D4D |
+| purple | #825D75 |
 | red | #F23E32 |
 | orange | #FAB562 |
 | light-green | #D2E594 |
@@ -36,7 +36,7 @@ Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Ru
 3. Create a new file in public/js YOURMODULE.js (with the name of your module)
 4. Copy the contents of the file public/js/sample.js into YOURMODULE.js. This will serve as your template.
 5. Do not delete anything from the template file!(accept setTimeout, if your module is shorter than 30, which it should be!)
-6. Put your view in the render function in View.
+6. Put your view in the render function in View, follow MVC as best you can.
 7. In public/js/mastercontroller.js, add the following line to the $(document).ready function:
 ```javascript
   newYourModule = new Module.YourModule();
