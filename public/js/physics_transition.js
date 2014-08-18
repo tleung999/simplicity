@@ -42,7 +42,7 @@ Module.PhysicsTransition.Model = function(){
                       ,'#FEDB74'
                       ,'#4D4550'
                       ,'#E7E3E3'];
-  this.transitionArray = ['js/ball_roll.js'];
+  this.transitionArray = ['js/ball_roll.js','js/crazy_dominoes.js'];
 }
 
 Module.PhysicsTransition.Model.prototype = {
@@ -83,7 +83,6 @@ Module.PhysicsTransition.View = function() {}
 Module.PhysicsTransition.View.prototype = {
   render: function(color, transition){
     this.addBackgroundColor(color);
-    this.addCanvas();
     this.addTransition(transition);
   },
 
@@ -99,11 +98,6 @@ Module.PhysicsTransition.View.prototype = {
   addBackgroundColor: function(color) {
     // add background color
     $(document.body).css("background-color", color)
-  },
-
-  addCanvas: function(){
-    var canvas = $('<canvas>').addClass('viewpoint')
-    $('#main-container').append(canvas)
   },
 
   addTransition: function(transition){
