@@ -40,7 +40,6 @@ Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Ru
 7. In public/js/mastercontroller.js, add the following line to the $(document).ready function:
 ```javascript
   newYourModule = new Module.YourModule();
-alert(s);
 ```
 8. add newYourModule to the moduleList array.
 
