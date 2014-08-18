@@ -47,6 +47,18 @@ Physics(function( world ){
 
   world.add( circle );
 
+  // trigger next even once ball exits the perimeter of the canvas
+  world.on('step', function(){
+    var ballPosX = this.state.pos.x;
+    var ballRadius = this.radius;
+    var ballPadding = 10; //pixels
+
+    if (ballPosX > canvasWidth+ballRadius+ballPadding){
+      $('canvas').remove();
+      $(document).trigger('next');
+    }
+  }.bind(circle));
+
   // ------------------------------------ //
   // Create Shelf for ball
   var shelf = []
