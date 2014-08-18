@@ -21,6 +21,22 @@ Physics(function( world ){
   });
 
   // ------------------------------------ //
+  // Add effects simulating gravity
+  // boundaries for the canvas.
+  var bounds = Physics.aabb(0, 0, canvasWidth+(canvasWidth/6), canvasHeight);
+
+  world.add( Physics.behavior('edge-collision-detection', {
+    aabb: bounds,
+    restitution: 0.3
+  }) );
+
+  world.add( Physics.behavior('constant-acceleration') );
+  world.add( Physics.behavior('body-impulse-response') );
+  world.add( Physics.behavior('body-collision-detection') );
+  world.add( Physics.behavior('sweep-prune') );
+
+
+  // ------------------------------------ //
   // Create Main Ball
   var circle = Physics.body('circle', {
     x: 140
