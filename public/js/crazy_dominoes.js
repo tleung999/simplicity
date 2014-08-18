@@ -3,7 +3,6 @@ Physics(function( world ){
       ,viewHeight = window.innerHeight
       // bounds of the window
       ,viewportBounds = Physics.aabb(0, 0, viewWidth, viewHeight)
-      ,edgeBounce
       ,renderer
       ;
 
@@ -35,6 +34,18 @@ Physics(function( world ){
     }
 
   world.add( dominoes );
+
+
+  var circle = Physics.body('circle', {
+    x: 50,
+    y: viewHeight-200,
+    vx: .1,
+    radius: 20
+  });
+
+  world.add( circle )
   world.render()
+
+
 
 })
