@@ -73,13 +73,13 @@ function buildHTML() {
   console.log(photolist)
   if (photolist === undefined || photolist.length === 0) {
     for (var a=0; a<genericphotos.length; a++) {
-      photolink = '<li><a><img src="'+ genericphotos[a] +
+      photolink = '<li><a href="#"><img src="'+ genericphotos[a] +
                   '" width="50%" height="50%" ></a></li>';
       $('#tags ul').append(photolink);
     }
   } else {
     for (var i=0; i<photolist.length && i<50; i++) {
-      photolink = '<li><a><img src="'+ photolist[i].source +
+      photolink = '<li><a href="#"><img src="'+ photolist[i].source +
                   '" width="50%" height="50%" ></a></li>';
       $('#tags ul').append(photolink);
     }

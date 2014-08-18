@@ -2,11 +2,11 @@ $(document).ready(function() {
   newPicture = new Module.Picture();
   newHelloUser = new Module.HelloUser();
   newTagCanvas = new Module.TagCanvas();
+  newWemo = new Module.Wemo();
   moduleList = [newHelloUser,
-                new Module.PhysicsTransition(),
                 newPicture,
-                new Module.PhysicsTransition(),
                 newTagCanvas];
+  // moduleList = [newTagCanvas]
   master = new MainController(moduleList);
   master.bindListeners();
   musicController();

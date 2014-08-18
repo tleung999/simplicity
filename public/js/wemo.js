@@ -54,7 +54,7 @@ Module.Wemo.Model = function(){
       type: 'GET',
       url: 'http://192.168.1.15:9292/on',
       //url: '192.168.1.15:9292/' + onOff
-      crossOrigin: true,
+      // crossOrigin: true,
       // dataType: "jsonp",
 
       data: JSON.stringify({ command: input})
