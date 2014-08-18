@@ -33,13 +33,15 @@ function creatingPage(){
   canvasHTML = "<canvas id='canvas'></canvas>"
   imgHTML = '<img src="http://placekitten.com/g/200/150" id="photo" alt="photo">'
   $('#main-container').append(videoHTML, canvasHTML, imgHTML)
+  debugger
   addingCSS();
 }
 
 function addingCSS(){
-  $(document.body).css("background-image", "none")
-  $(document.body).css("background-color", "#553D4D")
-
+  $('body').css({
+    "background": "#553D4D",
+    "height": "100%"
+  });
   $('canvas').css("display", "none");
   $('img').css({
     "display": "center",
@@ -79,6 +81,7 @@ function setupCamera(){
       var vendorURL = window.URL || window.webkitURL;
       video.src = vendorURL ? vendorURL.createObjectURL(stream) : stream;
     }
+    window.s = stream;
     video.play();
   },
   function(err) {
@@ -93,6 +96,10 @@ function setupCamera(){
       canvas.setAttribute('width', width);
       canvas.setAttribute('height', height);
       streaming = true;
+      setTimeout(function() {
+        window.s.stop();
+        console.log("cancelling streaming");
+      }, 20000);
     }
   }, false);
 
@@ -126,6 +133,3 @@ function canvasFollowingMouse(){
   $('#photo').css("top", (mousePosY - 30))
 }
 }
-
-
-

@@ -11,7 +11,7 @@ Module.HelloUser = function() {
       //cleans up the main container
       $("#main-container").empty();
         //Enter Your View Render here
-      var view = new Module.Alex.View();
+      var view = new Module.HelloUser.View();
 
       setTimeout(function() {
         $("#main-container").empty();
@@ -28,8 +28,8 @@ Module.HelloUser = function() {
 //build your view stuff and add it to the init function up above.   Use the start function to display your view.   DONT put your view call in the setTimeout.
 
 Module.HelloUser.View = function () {
-  $(document.body).css("background-image", "none")
-  $(document.body).css("background-color", "#95D3E2")
-  var helloUser = "<h1 class='animated bounceOutLeft' style='font-family:Helvetica;left:0;position: absolute;'>Hello " + currentUserInfo.name + "</h1>"
+  $(document.body).css("background-image", "none");
+  $(document.body).css("background-color", "#95D3E2");
+  var helloUser = "<h1 class='animated bounceOutLeft' style='font-family:Helvetica;left:0;position: absolute;'>Hello " + currentUserInfo.name + "</h1>";
   $("#main-container").append(helloUser);
-}
+};

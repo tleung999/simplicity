@@ -41,11 +41,11 @@ Module.Sample.View = function() {
 Module.Sample.View.prototype = {
   render: function() {
   }
-}
+};
 
 Module.Sample.Controller = function(view, controller) {
-  this.view = new view;
-  this.model = new model;
+  this.view = new view();
+  this.model = new model();
   this.init();
 };
 
@@ -53,4 +53,4 @@ Module.Sample.Controller.prototype = {
   init: function(){
 
   }
-}
+};
