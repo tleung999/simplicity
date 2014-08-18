@@ -2,7 +2,9 @@ $(document).ready(function() {
   newPicture = new Module.Picture();
   newTony = new Module.Tony();
   newAlex = new Module.Alex();
-  moduleList = [newAlex,newPicture, newTony];
+  newWemo = new Module.Wemo();
+  newTagCanvas = new Module.TagCanvas();
+  moduleList = [newTony];
   master = new MainController(moduleList);
   master.bindListeners();
 });
@@ -17,7 +19,7 @@ function MainController(moduleList) {
 
   this.init = function() {
     currentUserInfo = new CurrentUserInfo();
-    console.log(currentUserInfo)
+    console.log(currentUserInfo);
     $(this.moduleList).trigger('load');
   };
 
@@ -46,6 +48,7 @@ function CurrentUserInfo() {
   this.fbprofile = fbuser.profile;
   this.fbphotos = fbuser.photos;
   this.fbposts = fbuser.posts;
+  this.fbplaces = fbuser.places;
 }
 
 

@@ -14,6 +14,7 @@
       fbLikes(fbuser);
       fbPhotos(fbuser);
       fbPosts(fbuser);
+      fbPlaces(fbuser);
       // console.log(fbuser);
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -102,9 +103,16 @@
     });
   }
 
+  function fbPlaces (fbuser) {
+    FB.api('/me/tagged_places?limit=100', function(places) {
+        fbuser.places = places;
+    });
+  }
+
   function FBData() {
     this.likes = {};
     this.profile = {};
     this.photos = {};
     this.posts = {};
+    this.places = {};
   }
