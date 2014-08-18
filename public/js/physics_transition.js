@@ -20,7 +20,7 @@ Module.PhysicsTransition = function() {
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("transition ending");
         $(document).trigger('next');
-      },30000);
+      },15000);
     });
   };
   //initialize this Module
