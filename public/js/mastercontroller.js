@@ -2,10 +2,11 @@ $(document).ready(function() {
   newPicture = new Module.Picture();
   newHelloUser = new Module.HelloUser();
   newTagCanvas = new Module.TagCanvas();
-	moduleList = [newHelloUser,newPicture, newTagCanvas];
-	master = new MainController(moduleList);
-	master.bindListeners();
-	musicController();
+  newTransition1 = new Module.PhysicsTransition();
+  moduleList = [newHelloUser,newTransition1,newPicture,newTagCanvas];
+  master = new MainController(moduleList);
+  master.bindListeners();
+  musicController();
 });
 
 Module = {};
@@ -76,6 +77,3 @@ function toggleVolume(){
 		$audio.volume = 0;
 	}
 }
-
-
-
