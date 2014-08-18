@@ -1,7 +1,11 @@
 Physics(function( world ){
+  // ------------------------------------ //
+  // Set globably scoped vars for use within closure
   var canvasHeight = (window.innerHeight/10)*9
   var canvasWidth = (window.innerWidth/10)*9
 
+  // ------------------------------------ //
+  // Generate the "View" for the Physics Library
   // Create a renderer
   var renderer = Physics.renderer('canvas', {
     el: 'viewport',
@@ -16,6 +20,7 @@ Physics(function( world ){
     world.render();
   });
 
+  // ------------------------------------ //
   // Create Main Ball
   var circle = Physics.body('circle', {
     x: 140
@@ -25,8 +30,10 @@ Physics(function( world ){
   });
 
   world.add( circle );
-  world.render();
 
+
+  // ------------------------------------ //
+  // Animate the world
   // subscribe to ticker to advance the simulation
   Physics.util.ticker.on(function( time, dt ){
     world.step( time );
@@ -34,5 +41,4 @@ Physics(function( world ){
 
   // start the ticker
   Physics.util.ticker.start();
-
 })
