@@ -2,12 +2,15 @@ $(document).ready(function() {
   newPicture = new Module.Picture();
   newHelloUser = new Module.HelloUser();
   newTagCanvas = new Module.TagCanvas();
+  newCube = new Module.Cube();
   newWemo = new Module.Wemo();
   moduleList = [newHelloUser,
                 new Module.PhysicsTransition(),
                 newPicture,
                 new Module.PhysicsTransition(),
-                newTagCanvas];
+                newTagCanvas,
+                new Module.PhysicsTransition(),
+                newCube];
   // moduleList = [newTagCanvas]
   master = new MainController(moduleList);
   master.bindListeners();
