@@ -44,8 +44,12 @@ MainController.prototype = {
     if (this.loadCount === this.moduleList.length) {
       $(document).trigger('next');
     };
-    debugger
   },
+
+  startNextModule: function(){
+    $(this.moduleList[this.moduleIndex]).trigger('start');
+    this.moduleIndex++;
+  }
 }
 // ------------------------------------------------- //
 
@@ -78,6 +82,7 @@ MasterBinder.prototype = {
     var mController = this.controller;
     $(this.selectors.start).on('click', mController.loadModules.bind(mController));
     $(document).on('loaded', mController.incrementLoadCount.bind(mController));
+    $(document).on('next',mController.startNextModule.bind(mController));
   }
 };
 
