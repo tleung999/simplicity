@@ -17,6 +17,15 @@ $(document).ready(function() {
 
 Module = {};
 
+
+MainController = function(moduleList){
+  this.moduleList = this.insertPhysicsTransitions(moduleList);
+  this.moduleIndex = 0;
+  this.loadCount = 0;
+}
+
+
+
 // function MainController(moduleList) {
 //   this.moduleList = moduleList;
 //   this.moduleIndex = 0;
