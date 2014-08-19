@@ -11,7 +11,7 @@ $(document).ready(function() {
   // moduleList = [newTagCanvas]
   moduleList = ["Module A","Module B","Module C"]
   master = new MainController(moduleList);
-  master.bindListeners();
+  // master.bindListeners();
   // MusicController();
 });
 
@@ -22,6 +22,16 @@ MainController = function(moduleList){
   this.moduleList = this.insertPhysicsTransitions(moduleList);
   this.moduleIndex = 0;
   this.loadCount = 0;
+}
+
+MainController.prototype = {
+  insertPhysicsTransitions: function(moduleList) {
+    zippedList = [moduleList[0]];
+    for (var i = 1, l = moduleList.length; i<l;i++){
+      zippedList.push(new Module.PhysicsTransition(), moduleList[i]);
+    }
+    return zippedList;
+  }
 }
 
 
