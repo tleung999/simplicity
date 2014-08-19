@@ -57,8 +57,8 @@ function setupCamera(){
   video        = document.querySelector('#video'),
   canvas       = document.querySelector('#canvas'),
   photo        = document.querySelector('#photo'),
-  width = 300,
-  height = 300;
+  width = 500,
+  height = 500;
 
   navigator.getMedia = ( navigator.getUserMedia ||
    navigator.webkitGetUserMedia ||
