@@ -10,13 +10,14 @@ $(document).ready(function() {
   //               newTagCanvas];
   // moduleList = [newTagCanvas]
   master = new MainController(MainModel);
-  debugger
+  new MasterBinder({start: '#start'}, master).bindToSelectors();
   // master.bindListeners();
   // MusicController();
 });
 
 Module = {};
 
+// ------------------------------------------------- //
 
 MainController = function(model){
   this.model = new model;
@@ -26,7 +27,14 @@ MainController = function(model){
 }
 
 MainController.prototype = {
+  // loadModules is bound to $('#start') by the MasterBinder
+  loadModules: function(){
+    // add in currentUserInfo
+    debugger
+    $(this.moduleList).trigger('load');
+  }
 }
+// ------------------------------------------------- //
 
 MainModel = function(){
   this.coreModules = [new Module.HelloUser()
@@ -45,6 +53,18 @@ MainModel.prototype = {
   }
 }
 
+// ------------------------------------------------- //
+
+var MasterBinder = function(selectors, controller) {
+  this.selectors = selectors;
+  this.controller = controller;
+};
+
+MasterBinder.prototype = {
+  bindToSelectors: function() {
+    $(this.selectors.start).on('click', this.controller.loadModules.bind(this.controller));
+  }
+};
 
 
 // function MainController(moduleList) {
