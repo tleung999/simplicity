@@ -15,9 +15,8 @@ Module.TwilioCall = function() {
       //Enter Your View Render here
       var twilioCallController = new Module.TwilioCall.Controller()
       // Module.View.render();
-
+      twilioCallController.init();
       setTimeout(function() {
-        twilioCallController.init();
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("twilio app to call ending");
@@ -41,7 +40,7 @@ Module.TwilioCall.Controller = function(){
 
   this.init = function(){
     this.view.render()
-    this.model.makeCall(currentUserInfo.phone)
+    //this.model.makeCall(currentUserInfo.phone)
   }
 };
 
@@ -52,7 +51,7 @@ Module.TwilioCall.Model = function() {
 
     var ajax = $.ajax({
       type: 'get',
-      url: 'http://dry-fortress-5128.herokuapp.com/call/new',
+      url: 'http://secure-temple-4125.herokuapp.com/call/new',
       data: {phone: phone}
     }).done(function(data){
       console.log ('call completed')
@@ -62,10 +61,8 @@ Module.TwilioCall.Model = function() {
 
 Module.TwilioCall.View = function() {
   this.render = function() {
-  $(document.body).css("background-image", "none");
-  // orange
-  $(document.body).css("background-color", "#FAB562");
-  // PC: append div here that says "and now..., let there be light!
-  $(document.body).prepend('<h1> MATRIX: Pick up your phone! </h1>');
+  $(document.body).css("background-image", 'none');
+  $(document.body).append("<img src='../images/morpheus.jpg'></img>");
+  $('body img').css('width', '100%')
   }
 };
