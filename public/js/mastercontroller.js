@@ -9,8 +9,8 @@ $(document).ready(function() {
   //               new Module.PhysicsTransition(),
   //               newTagCanvas];
   // moduleList = [newTagCanvas]
-  moduleList = ["Module A","Module B","Module C"]
-  master = new MainController(moduleList);
+  master = new MainController(MainModel);
+  debugger
   // master.bindListeners();
   // MusicController();
 });
@@ -18,13 +18,24 @@ $(document).ready(function() {
 Module = {};
 
 
-MainController = function(moduleList){
-  this.moduleList = this.insertPhysicsTransitions(moduleList);
+MainController = function(model){
+  this.model = new model;
+  this.moduleList = this.model.moduleList;
   this.moduleIndex = 0;
   this.loadCount = 0;
 }
 
 MainController.prototype = {
+}
+
+MainModel = function(){
+  this.coreModules = [new Module.HelloUser()
+                    ,new Module.HelloUser()
+                    ,new Module.HelloUser()];
+  this.moduleList = this.insertPhysicsTransitions(this.coreModules);
+}
+
+MainModel.prototype = {
   insertPhysicsTransitions: function(moduleList) {
     zippedList = [moduleList[0]];
     for (var i = 1, l = moduleList.length; i<l;i++){
