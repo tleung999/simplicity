@@ -43,6 +43,7 @@ Module.HelloUser.View = function () {
                         "tremendous",
                         "unparalleled"];
   var compliment = complimentArray[Math.floor(Math.random() * complimentArray.length)];
+  var userName = currentUserInfo.fbprofile.name
   $(document.body).css("background-image", "none");
   // debugger
   var helloUser = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello " + currentUserInfo.fbprofile.name + "! <br> You are " + compliment + "!</h1>";
