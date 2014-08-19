@@ -46,10 +46,11 @@ MasterController.prototype = {
 // ------------------------------------------------- //
 
 MasterModel = function(){
-  this.coreModules = [new Module.HelloUser()
-                    ,new Module.Picture()
-                    ,new Module.TagCanvas()
-                    ,new Module.Cube()];
+  // this.coreModules = [new Module.HelloUser()
+  //                   ,new Module.Picture()
+  //                   ,new Module.TagCanvas()
+  //                   ,new Module.Cube()];
+  this.coreModules = [new Module.Places()];
   this.moduleList = this.insertPhysicsTransitions(this.coreModules);
 }
 
