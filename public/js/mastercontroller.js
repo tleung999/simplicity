@@ -10,7 +10,7 @@ $(document).ready(function() {
   //               newTagCanvas];
   // moduleList = [newTagCanvas]
   var currentUserInfo;
-  master = new MainController(MainModel);
+  master = new MainController(MainModel, MainView);
   new MasterBinder({start: '#start'}, master).bindToSelectors();
   // master.bindListeners();
   // MusicController();
@@ -20,8 +20,9 @@ Module = {};
 
 // ------------------------------------------------- //
 
-MainController = function(model){
+MainController = function(model, view){
   this.model = new model;
+  this.view = new view;
   this.moduleList = this.model.moduleList;
   this.moduleIndex = 0;
   this.loadCount = 0;
@@ -50,6 +51,7 @@ MainController.prototype = {
   startNextModule: function(){
     $(this.moduleList[this.moduleIndex]).trigger('start');
     this.moduleIndex++;
+    this.view.setRandomBackgroundColor();
   }
 }
 // ------------------------------------------------- //
@@ -99,6 +101,42 @@ function CurrentUserInfo() {
   this.fbplaces = fbuser.places;
 }
 
+//  --------------------------------------- //
+var MainView = function() {
+  this.colorArray =  ['#95D3E2'
+                      ,'#254D78'
+                      ,'#825D75'
+                      ,'#F23E32'
+                      ,'#FAB562'
+                      ,'#D2E594'
+                      ,'#476054'
+                      ,'#FEDB74'
+                      ,'#4D4550'
+                      ,'#E7E3E3'];
+}
+
+MainView.prototype = {
+
+  setRandomBackgroundColor: function(){
+    var color = this.produceRandomColor();
+    this.removeBackgroundColor();
+    this.renderNewBackgroundColor(color);
+  },
+
+  produceRandomColor: function(){
+    var colorArrayLength = this.colorArray.length;
+    var randomIndex = Math.floor((Math.random() * colorArrayLength));
+    return this.colorArray[randomIndex];
+  },
+
+  removeBackgroundColor: function(){
+    $(document.body).css("background-image", "none")
+  },
+
+  renderNewBackgroundColor: function(color) {
+    $(document.body).css("background-color", color)
+  }
+}
 
 // function MainController(moduleList) {
 //   this.moduleList = moduleList;
