@@ -2,20 +2,17 @@ Module.Picture = function() {
   var self = this;
   this.init = function() {
     $(this).on('load', function() {
-      console.log("loading picture app");
       //preload some stuff to get your module ready
       $(document).trigger('loaded');
     });
 
     $(this).on('start', function() {
-      console.log("starting picture app");
         //Enter Your View render here
       $("#main-container").empty();
       creatingPage();
       setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
-        console.log("picture app ending");
         $(document).trigger('next');
       },20000);
     });
@@ -97,7 +94,6 @@ function setupCamera(){
       streaming = true;
       setTimeout(function() {
         window.s.stop();
-        console.log("cancelling streaming");
       }, 20000);
     }
   }, false);

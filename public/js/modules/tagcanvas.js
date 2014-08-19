@@ -2,13 +2,11 @@ Module.TagCanvas = function() {
   var self = this;
   this.init = function() {
     $(this).on('load', function() {
-      console.log("loading tagCanvas app");
       //preload some stuff to get your module ready
       $(document).trigger('loaded');
     });
 
     $(this).on('start', function() {
-      console.log("starting tagCanvas app");
       //cleans up the main main-container
       $("#main-container").empty();
       //Enter Your View Render here
@@ -17,7 +15,6 @@ Module.TagCanvas = function() {
       setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
-        console.log("tagCanvas app ending");
         $(document).trigger('next');
       },20000);
     });
@@ -32,9 +29,6 @@ Module.TagCanvas = function() {
 
 Module.TagCanvas.View = {
   render: function() {
-    //clear background and change bg color.
-    $(document.body).css("background-image", "none");
-    $(document.body).css("background-color", "#E7E3E3");
     //Create the canvas box.
     buildHTML();
     //Create the animation
@@ -86,7 +80,7 @@ function buildHTML() {
   }
 }
 
-genericphotos = [
+var genericphotos = [
   "http://www.rocktheshotforum.com/wp-content/uploads/2011/08/image11.png",
   "http://learnthat.com/files/2010/02/windows-7-tutorial1.png",
   "https://cdn1.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/256/social_google_box.png",
