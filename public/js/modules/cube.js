@@ -55,14 +55,14 @@ Module.Cube.Controller = function(view, model) {
 Module.Cube.Controller.prototype = {
 
   init: function(){
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-      camera.position.z = 300;
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+    camera.position.z = 300;
 
-      scene = new THREE.Scene();
+    scene = new THREE.Scene();
 
-      geometry = new THREE.BoxGeometry(150, 150, 150, 150);
+    geometry = new THREE.BoxGeometry(150, 150, 150, 150);
       //var url = //Enter the variable for the new link here
-      if (currentUserInfo.fbphotos.data === undefined) {
+      if (currentUserInfo.fbphotos.data.length === 0 || currentUserInfo.fbphotos.data === undefined) {
         image = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/t1.0-9/196551_10100380941062870_6244660_n.jpg';
       } else {
         image = currentUserInfo.fbphotos.data[0].source;
@@ -78,13 +78,13 @@ Module.Cube.Controller.prototype = {
       renderer = new THREE.CanvasRenderer();
       renderer.setSize(window.innerWidth, window.innerHeight);
       $('#main-container').append(renderer.domElement);
-  },
+    },
 
-  animate: function() {
-    requestAnimationFrame(this.animate.bind(this));
-    mesh.rotation.x += 0.01;
-    mesh.rotation.y += 0.01;
+    animate: function() {
+      requestAnimationFrame(this.animate.bind(this));
+      mesh.rotation.x += 0.01;
+      mesh.rotation.y += 0.01;
 
-    renderer.render(scene, camera);
-  }
-};
+      renderer.render(scene, camera);
+    }
+  };
