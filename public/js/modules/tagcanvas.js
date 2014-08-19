@@ -54,6 +54,23 @@ Module.TagCanvas.View = {
 };
 
 function buildHTML() {
+  var genericphotos = [
+    "http://www.rocktheshotforum.com/wp-content/uploads/2011/08/image11.png",
+    "http://learnthat.com/files/2010/02/windows-7-tutorial1.png",
+    "https://cdn1.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/256/social_google_box.png",
+    "http://www.carmendelajara.com/Resources/Spotify.png",
+    "http://civicio.files.wordpress.com/2013/03/github.png?w=256&h=256",
+    "http://existdissolve.com/wp-content/uploads/2012/01/256px-Ruby_logo.png",
+    "http://software.opensuse.org/assets/default-screenshots/python-99cfd25473c412060296e820adeee175.png",
+    "http://www.4stud.info/networking/img/postgresql.png",
+    "http://www.tutorgrams.com/images/mysql.png",
+    "https://pbs.twimg.com/profile_images/428296181739827200/Wjyk7gfV.png",
+    "https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-256.png",
+    "http://technicallyeasy.net/wp-content/uploads/2011/04/apple-logo-256x256.jpg",
+    "http://socialtimes.com/files/2013/02/Dev-Bootcamp-logo.jpg",
+    "https://secure.gravatar.com/avatar/af9304fb60f3d2e6cb44b7dcd395ef20.png?r=PG&d=mm&s=150"
+  ];
+
   canvasHTML = '<div id="#main-container"><canvas width="' +
                 window.innerWidth + '" height="' +
                 window.innerHeight + '" id="myCanvas">' +
@@ -64,7 +81,6 @@ function buildHTML() {
   $("#main-container").append(canvasHTML);
   $("#main-container").append(picturebase);
   photolist = currentUserInfo.fbphotos.data;
-  console.log(photolist)
   if (photolist === undefined || photolist.length === 0) {
     for (var a=0; a<genericphotos.length; a++) {
       photolink = '<li><a href="#"><img src="'+ genericphotos[a] +
@@ -80,19 +96,3 @@ function buildHTML() {
   }
 }
 
-var genericphotos = [
-  "http://www.rocktheshotforum.com/wp-content/uploads/2011/08/image11.png",
-  "http://learnthat.com/files/2010/02/windows-7-tutorial1.png",
-  "https://cdn1.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/256/social_google_box.png",
-  "http://www.carmendelajara.com/Resources/Spotify.png",
-  "http://civicio.files.wordpress.com/2013/03/github.png?w=256&h=256",
-  "http://existdissolve.com/wp-content/uploads/2012/01/256px-Ruby_logo.png",
-  "http://software.opensuse.org/assets/default-screenshots/python-99cfd25473c412060296e820adeee175.png",
-  "http://www.4stud.info/networking/img/postgresql.png",
-  "http://www.tutorgrams.com/images/mysql.png",
-  "https://pbs.twimg.com/profile_images/428296181739827200/Wjyk7gfV.png",
-  "https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-256.png",
-  "http://technicallyeasy.net/wp-content/uploads/2011/04/apple-logo-256x256.jpg",
-  "http://socialtimes.com/files/2013/02/Dev-Bootcamp-logo.jpg",
-  "https://secure.gravatar.com/avatar/af9304fb60f3d2e6cb44b7dcd395ef20.png?r=PG&d=mm&s=150"
-];

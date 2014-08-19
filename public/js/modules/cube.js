@@ -3,13 +3,11 @@ Module.Cube = function() {
   this.init = function() {
 
     $(this).on('load', function() {
-      console.log("loading Cube app");
       //preload some stuff to get your module ready
       $(document).trigger('loaded');
     });
 
     $(this).on('start', function() {
-      console.log("starting Cube app");
       //cleans up the main main-container
       $("#main-container").empty();
       //Enter Your View Render here
@@ -18,7 +16,6 @@ Module.Cube = function() {
       setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
-        console.log("Cube app ending");
         $(document).trigger('next');
       },10000);
     });
