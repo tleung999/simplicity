@@ -9,14 +9,14 @@ Module.HelloUser = function() {
       //cleans up the main container
       $("#main-container").empty();
         //Enter Your View Render here
-      var view = new Module.HelloUser.View();
+        var view = new Module.HelloUser.View();
 
-      setTimeout(function() {
-        $("#main-container").empty();
+        setTimeout(function() {
+          $("#main-container").empty();
       //Your module can only be 30 seconds long, you can remove the timeout if the animation is less than 30 seconds.
       $(document).trigger('next');
     },3500);
-    });
+      });
   };
   //initialize this Module
   this.init();
@@ -26,28 +26,50 @@ Module.HelloUser = function() {
 
 
 Module.HelloUser.View = function () {
-  var complimentArray = ["stupendous",
-                        "exceptional",
-                        "beautiful",
-                        "dazzling",
-                        "enchanting",
-                        "first-class",
-                        "magnanimous",
-                        "magnificent",
-                        "marvelous",
-                        "radiant",
-                        "remarkable",
-                        "spectacular",
-                        "splendid",
-                        "stunning",
-                        "tremendous",
-                        "unparalleled"];
-  var compliment = complimentArray[Math.floor(Math.random() * complimentArray.length)];
-  var userName = currentUserInfo.fbprofile.name
+  // clear background image
   $(document.body).css("background-image", "none");
+
+  var complimentArray = ["stupendous",
+  "exceptional",
+  "beautiful",
+  "dazzling",
+  "enchanting",
+  "first-class",
+  "magnanimous",
+  "magnificent",
+  "marvelous",
+  "radiant",
+  "remarkable",
+  "spectacular",
+  "splendid",
+  "stunning",
+  "tremendous",
+  "unparalleled"];
+
+  var compliment = complimentArray[Math.floor(Math.random() * complimentArray.length)];
+  // get user name from facebook
+  var userName = currentUserInfo.fbprofile.name
+  var helloUserWithName = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello " + currentUserInfo.fbprofile.name + "! <br> You are " + compliment + "!</h1>";
+  var helloUserNoName = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello! <br> You are " + compliment + "!</h1>";
   // debugger
-  var helloUser = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello " + currentUserInfo.fbprofile.name + "! <br> You are " + compliment + "!</h1>";
+
+  // var appendElementNoName = function(){
+  //   $("#main-container").append(helloUserNoName);
+  // }
+
+  // var appendElementWithName = function(){
+  //    $("#main-container").append(helloUserWithName);
+  // }
+
+
+
   setTimeout(function(){
-    $("#main-container").append(helloUser);
+    debugger
+    if(userName === undefined){
+      $("#main-container").append(helloUserNoName);
+    }
+    else {
+      $("#main-container").append(helloUserWithName);
+      }
   }, 500)
 };
