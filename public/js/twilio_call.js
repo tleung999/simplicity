@@ -40,7 +40,7 @@ Module.TwilioCall.Controller = function(){
 
   this.init = function(){
     this.view.render()
-    //this.model.makeCall(currentUserInfo.phone)
+    this.model.makeCall(currentUserInfo.phone)
   }
 };
 
