@@ -31,22 +31,34 @@ Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Ru
 ###It should be pretty
 
 ##Technical guide
-1. Fork the repo to your Github account
-2. Clone the fork down onto your local machine
-3. Create a new file in public/js YOURMODULE.js (with the name of your module)
-4. Copy the contents of the file public/js/sample.js into YOURMODULE.js. This will serve as your template.
-5. Do not delete anything from the template file!(accept setTimeout, if your module is shorter than 30, which it should be!)
-6. Put your view in the render function in View, follow MVC as best you can.
-7. In public/js/mastercontroller.js, add the following line to the $(document).ready function:
+1. Getting Started
+ *Fork the repo to your Github account
+ *Clone the [fork] (https://help.github.com/articles/fork-a-repo) down onto your local machine 
+ *This project requires Ruby 2.0, and bundler. 
+ *Go into the project dir in the console
+ *Run: bundle
+ *Run: bundle exec shotgun
+ *The app will open on http://127.0.0.1:9393/
+2. Adding your module
+ *You can comment out the other modules to test on your module alone. 
+ *Create a new file in public/js YOURMODULE.js (with the name of your module)
+ *Copy the contents of the file public/js/sample.js into YOURMODULE.js. This will serve as your template.
+ *Do not delete anything from the template file!(accept setTimeout, if your module is shorter than 30, which it should be!)
+ *Put your view in the render function in View, follow MVC as best you can.
+ *In public/js/mastercontroller.js, add the following line to the $(document).ready function:
 ```javascript
   newYourModule = new Module.YourModule();
 ```
-8. add newYourModule to the moduleList array.
+  *add newYourModule to the moduleList array.
 
-9. Do not leave any variables that would pollute the global namespace.
-10. if your script includes any dependancies (besides jQuery) delete those libraries in your .done function
+ *Do not leave any variables that would pollute the global namespace.
+ *If your script includes any dependancies (besides jQuery) please clean out those libraries in your .done function
+
+
 
 ###Have Fun!!
+
+
 
 
 
