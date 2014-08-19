@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var currentUserInfo;
-  master = new MainController(MainModel, MainView);
+  master = new MasterController(MasterModel, MasterView);
   new MasterBinder({start: '#start'}, master).bindToSelectors();
   // MusicController();
 });
@@ -9,7 +9,7 @@ Module = {};
 
 // ------------------------------------------------- //
 
-MainController = function(model, view){
+MasterController = function(model, view){
   this.model = new model;
   this.view = new view;
   this.moduleList = this.model.moduleList;
@@ -17,7 +17,7 @@ MainController = function(model, view){
   this.loadCount = 0;
 }
 
-MainController.prototype = {
+MasterController.prototype = {
   // loadModules is bound to $('#start') by the MasterBinder
   loadModules: function(){
     currentUserInfo = new CurrentUserInfo();
@@ -45,14 +45,14 @@ MainController.prototype = {
 }
 // ------------------------------------------------- //
 
-MainModel = function(){
+MasterModel = function(){
   this.coreModules = [new Module.HelloUser()
                     ,new Module.HelloUser()
                     ,new Module.HelloUser()];
   this.moduleList = this.insertPhysicsTransitions(this.coreModules);
 }
 
-MainModel.prototype = {
+MasterModel.prototype = {
   insertPhysicsTransitions: function(moduleList) {
     zippedList = [moduleList[0]];
     for (var i = 1, l = moduleList.length; i<l;i++){
@@ -91,7 +91,7 @@ function CurrentUserInfo() {
 }
 
 //  --------------------------------------- //
-var MainView = function() {
+var MasterView = function() {
   this.colorArray =  ['#95D3E2'
                       ,'#254D78'
                       ,'#825D75'
@@ -104,7 +104,7 @@ var MainView = function() {
                       ,'#E7E3E3'];
 }
 
-MainView.prototype = {
+MasterView.prototype = {
 
   setRandomBackgroundColor: function(){
     var color = this.produceRandomColor();
