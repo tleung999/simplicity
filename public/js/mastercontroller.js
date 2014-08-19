@@ -47,10 +47,6 @@ function MainController(moduleList) {
 }
 
 function CurrentUserInfo() {
-  var formInput = $("#form input").serializeArray();
-  this.name = formInput[0].value;
-  this.love = formInput[1].value;
-  this.phone = formInput[2].value;
   this.likes = fbuser.likes;
   this.fbprofile = fbuser.profile;
   this.fbphotos = fbuser.photos;
