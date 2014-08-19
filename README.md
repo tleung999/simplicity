@@ -1,8 +1,11 @@
-simplicity
+#What time is it?
+## We wrote the app for that. 
 
-DBC Final Project
+### Dev Bootcamp Final Project, Purple Martins 2014
 
-Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Rube_Goldberg_machine). It is modular in design in hopes of making it as easy as possible for public contributions!
+### Contributers: Alex White, Ariel Fogel, Justin Harnoss, Kendall Carrey, Tony Leung
+
+Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Rube_Goldberg_machine). It is modular in design in hopes of making it as easy as possible for public contributions.
 
 #How to make a succesful pull request to add an event to our machine:
 
