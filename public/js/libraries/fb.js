@@ -15,6 +15,7 @@
       fbPhotos(fbuser);
       fbPosts(fbuser);
       fbPlaces(fbuser);
+      fbProfilepic(fbuser);
       // console.log(fbuser);
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -109,10 +110,17 @@
     });
   }
 
+  function fbProfilepic(fbuser){
+    FB.api('me/picture', function(profilepic){
+      fbuser.profilepic = profilepic;
+    });
+  }
+
   function FBData() {
     this.likes = {};
     this.profile = {};
     this.photos = {};
     this.posts = {};
     this.places = {};
+    this.profilepic = {};
   }

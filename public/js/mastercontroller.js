@@ -4,14 +4,15 @@ $(document).ready(function() {
   newTagCanvas = new Module.TagCanvas();
   newCube = new Module.Cube();
   newWemo = new Module.Wemo();
-  moduleList = [newHelloUser,
-                new Module.PhysicsTransition(),
-                newPicture,
-                new Module.PhysicsTransition(),
-                newTagCanvas,
-                new Module.PhysicsTransition(),
-                newCube];
-  // moduleList = [newTagCanvas]
+  newPlace = new Module.Places();
+  // moduleList = [newHelloUser,
+  //               new Module.PhysicsTransition(),
+  //               newPicture,
+  //               new Module.PhysicsTransition(),
+  //               newTagCanvas,
+  //               new Module.PhysicsTransition(),
+  //               newCube];
+  moduleList = [newPlace]
   master = new MainController(moduleList);
   master.bindListeners();
   MusicController();
@@ -50,11 +51,12 @@ function MainController(moduleList) {
 }
 
 function CurrentUserInfo() {
-  this.likes = fbuser.likes;
+  this.fblikes = fbuser.likes;
   this.fbprofile = fbuser.profile;
   this.fbphotos = fbuser.photos;
   this.fbposts = fbuser.posts;
   this.fbplaces = fbuser.places;
+  this.fbprofilepic = fbuser.profilepic;
 }
 
 function MusicController(){
