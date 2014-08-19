@@ -9,6 +9,7 @@ $(document).ready(function() {
   //               new Module.PhysicsTransition(),
   //               newTagCanvas];
   // moduleList = [newTagCanvas]
+  var currentUserInfo;
   master = new MainController(MainModel);
   new MasterBinder({start: '#start'}, master).bindToSelectors();
   // master.bindListeners();
@@ -29,7 +30,7 @@ MainController = function(model){
 MainController.prototype = {
   // loadModules is bound to $('#start') by the MasterBinder
   loadModules: function(){
-    // add in currentUserInfo
+    currentUserInfo = new CurrentUserInfo();
     $(this.moduleList).trigger('load');
   },
 
@@ -85,6 +86,18 @@ MasterBinder.prototype = {
     $(document).on('next',mController.startNextModule.bind(mController));
   }
 };
+
+function CurrentUserInfo() {
+  var formInput = $("#form input").serializeArray();
+  this.name = formInput[0].value;
+  this.love = formInput[1].value;
+  this.phone = formInput[2].value;
+  this.likes = fbuser.likes;
+  this.fbprofile = fbuser.profile;
+  this.fbphotos = fbuser.photos;
+  this.fbposts = fbuser.posts;
+  this.fbplaces = fbuser.places;
+}
 
 
 // function MainController(moduleList) {
