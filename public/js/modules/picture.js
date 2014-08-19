@@ -81,11 +81,11 @@ function setupCamera(){
     video.play();
   },
   function(err) {
+    clearInterval(interval)
     photo.setAttribute('src', 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/t1.0-9/196551_10100380941062870_6244660_n.jpg');
-    // console.log("An error occured! " + err);
   }
   );
-  video.addEventListener('canplay', function(ev){
+  video.addEventListener('canplay', function(){
     if (!streaming) {
       height = video.videoHeight / (video.videoWidth/width);
       video.setAttribute('width', width);
@@ -104,10 +104,11 @@ function setupCamera(){
     canvas.height = height;
     canvas.getContext('2d').drawImage(video, 0, 0, width, height);
     var data = canvas.toDataURL('image/png');
+    // debugger
     photo.setAttribute('src', data);
   }
 
-setInterval(function(){
+var interval = setInterval(function(){
   takepicture();
   }, 3000);
 canvasFollowingMouse();
