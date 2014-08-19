@@ -30,9 +30,22 @@ MainController.prototype = {
   // loadModules is bound to $('#start') by the MasterBinder
   loadModules: function(){
     // add in currentUserInfo
-    debugger
     $(this.moduleList).trigger('load');
-  }
+  },
+
+  // incrementLoadCount is bound to $(document) by the MasterBinder
+  // incrementLoadCount is called by $(document).on('loaded')
+  incrementLoadCount: function(){
+    this.loadCount++;
+    this.triggerFirstModule();
+  },
+
+  triggerFirstModule: function(){
+    if (this.loadCount === this.moduleList.length) {
+      $(document).trigger('next');
+    };
+    debugger
+  },
 }
 // ------------------------------------------------- //
 
@@ -62,7 +75,9 @@ var MasterBinder = function(selectors, controller) {
 
 MasterBinder.prototype = {
   bindToSelectors: function() {
-    $(this.selectors.start).on('click', this.controller.loadModules.bind(this.controller));
+    var mController = this.controller;
+    $(this.selectors.start).on('click', mController.loadModules.bind(mController));
+    $(document).on('loaded', mController.incrementLoadCount.bind(mController));
   }
 };
 
