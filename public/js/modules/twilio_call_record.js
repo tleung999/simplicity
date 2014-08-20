@@ -53,7 +53,7 @@ Module.TwilioCallRecord.View = function() {
     $(document).on('record', this.appendRecord)
     $('#main-container').addClass('clock')
     $('#main-container').append('<h1>???</h1>')
-    $('h1').addClass('custom animated bounceInRight')
+    $('h1').addClass('custom animated tada')
   }
   this.appendRecord = function(event, data){
     console.log('append record')
