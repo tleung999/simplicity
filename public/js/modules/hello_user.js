@@ -64,7 +64,6 @@ Module.HelloUser.View = function () {
 
 
   setTimeout(function(){
-    debugger
     if(userName === undefined){
       $("#main-container").append(helloUserNoName);
     }
