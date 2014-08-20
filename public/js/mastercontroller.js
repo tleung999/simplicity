@@ -1,12 +1,21 @@
 $(document).ready(function() {
   newPicture = new Module.Picture();
+  newWemo = new Module.Wemo;
+  newTwilioCall = new Module.TwilioCall;
+  newTwilioCallRecord = new Module.TwilioCallRecord;
+  newTwilioSMS = new Module.TwilioSMS;
   newHelloUser = new Module.HelloUser();
   newTagCanvas = new Module.TagCanvas();
-  moduleList = [newHelloUser,
-                new Module.PhysicsTransition(),
-                newPicture,
-                new Module.PhysicsTransition(),
-                newTagCanvas];
+  moduleList = [//newHelloUser,
+                //new Module.PhysicsTransition(),
+                //newPicture,
+                //new Module.PhysicsTransition(),
+                //newTagCanvas,
+                newTwilioSMS,
+                //newTwilioCall,
+                //newWemo
+                //newTwilioCallRecord
+                ];
   master = new MainController(moduleList);
   master.bindListeners();
   musicController();

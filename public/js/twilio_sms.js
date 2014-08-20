@@ -41,23 +41,34 @@ Module.TwilioSMS.Controller = function(){
 
   this.init = function(){
     this.view.render()
-    var phoneNumbers = ['5105081935'] //, '4158168768', '5105081935']
-    this.model.sendMessage(phoneNumbers)
+
+    var phoneNumbers = this.model.getPhoneNumbers()
+    
+    phoneNumbers.forEach(function(number) {
+      var mesage = this.model.getRandomMessage()
+      this.model.sendMessage(number, message)
+    });
+
   }
 };
 
 Module.TwilioSMS.Model = function() {
-  this.sendMessage = function(phoneNumbers){
-    console.log('sending message to ' + phoneNumbers)
-    var message = 'Hey this is Tony - This is all bull****, I did all the work!!!'
+  this.sendMessage = function(number, message){
+    console.log('sending message to ' + number)
 
     var ajax = $.ajax({
       type: 'get',
       url: 'http://dry-fortress-5128.herokuapp.com/message/new',
-      data: {phone: phoneNumbers, message: message}
+      data: {phone: number, message: message}
     }).done(function(data){
       console.log ('message sent')
     })
+  }
+  this.getPhoneNumbers = function(){
+    ['5105081935']
+  };
+  this.getRandomMessage = function(){
+    ['test message']
   }
 };
 
