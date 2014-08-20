@@ -10,7 +10,7 @@ Module.Picture = function() {
         //Enter Your View render here
       $("#main-container").empty();
       creatingPage();
-      setTimeout(function() {
+      timeout = setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
         $(document).trigger('next');
@@ -82,7 +82,11 @@ function setupCamera(){
   },
   function(err) {
     clearInterval(interval)
+    clearTimeout(timeout)
     photo.setAttribute('src', 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/t1.0-9/196551_10100380941062870_6244660_n.jpg');
+    setTimeout(function(){
+      $(document).trigger('next');
+    }, 4000)
   }
   );
   video.addEventListener('canplay', function(){
@@ -95,7 +99,7 @@ function setupCamera(){
       streaming = true;
       setTimeout(function() {
         window.s.stop();
-      }, 20000);
+      }, 13000);
     }
   }, false);
 

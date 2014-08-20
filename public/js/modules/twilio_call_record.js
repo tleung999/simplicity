@@ -21,7 +21,7 @@ Module.TwilioCallRecord = function() {
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("twilio app to call ending");
         $(document).trigger('next');
-      },50000);
+      },13000);
     });
   };
   //initialize this Module
@@ -45,7 +45,7 @@ Module.TwilioCallRecord.Controller = function(){
 };
 
 Module.TwilioCallRecord.Model = function() {
-  
+
   this.getCallRecord = function(){
     console.log('fetching record...')
 
@@ -56,7 +56,7 @@ Module.TwilioCallRecord.Model = function() {
     }).done(function(data){
       console.log ('record fetched')
       $(document).trigger('record', data)
-      
+
     })
   }
 };
