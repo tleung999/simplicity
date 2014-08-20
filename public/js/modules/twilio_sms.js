@@ -11,7 +11,6 @@ Module.TwilioSMS = function() {
       console.log("starting twilio SMS app");
       $("#main-container").empty();
       var twilioSMSController = new Module.TwilioSMS.Controller()
-      // Module.View.render();
       twilioSMSController.init();
       setTimeout(function() {
         console.log("twilio app ending");
@@ -56,7 +55,7 @@ Module.TwilioSMS.Model = function() {
     })
   }
   this.getPhoneNumbers = function(){
-    return ['123']//,'5105081935']
+    return ['5105081935']
   };
   this.getRandomMessage = function(){
     return quoteArray[Math.floor(Math.random() * quoteArray.length)]
