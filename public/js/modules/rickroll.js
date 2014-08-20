@@ -34,7 +34,7 @@ Module.RickRoll.View = function() {
 };
 Module.RickRoll.View.prototype = {
   render: function() {
-        $('#main-container').append('<center><iframe frameborder="0" width="680" height="420" src="http://www.dailymotion.com/embed/video/xsdji?autoPlay=1&logo=0&info=0&highlight=ffffff"></iframe></center>');
+    $('#main-container').append('<center><iframe src="http://player.vimeo.com/video/2619976?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="500" height="385" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>');
   }
 };
 
