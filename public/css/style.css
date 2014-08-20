@@ -1,4 +1,4 @@
-@media only screen and (min-width : 1070px) {
+@media only screen and (min-width : 800px) {
 
   #small-platform{
     display: none;
@@ -100,7 +100,7 @@
   }
 }
 
-@media all and (max-width : 1069px) {
+@media all and (max-width : 799px) {
 
 #small-platform{
   display: block;
