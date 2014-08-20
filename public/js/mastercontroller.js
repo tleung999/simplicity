@@ -50,8 +50,9 @@ MasterModel = function(){
                      new Module.HelloUser()
                     ,new Module.Picture()
                     ,new Module.TagCanvas()
+                    ,new Module.RickRoll()
                     ,new Module.Cube()
-                    ,new Module.Places()]
+                    ,new Module.Places()
                     ,new Module.TheTime()];
   this.moduleList = this.insertPhysicsTransitions(this.coreModules);
 }

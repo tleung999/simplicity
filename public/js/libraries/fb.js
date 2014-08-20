@@ -79,7 +79,7 @@
   function testAPI(fbuser) {
     // console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
+      // console.log('Successful login for: ' + response.name);
       document.getElementById('start').innerHTML =
         'Thanks for logging in, <strong>' + response.name + '</strong>! <br> Click to get the time!';
         fbuser.profile = response;
