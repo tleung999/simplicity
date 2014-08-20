@@ -95,7 +95,7 @@ function setupCamera(){
       streaming = true;
       setTimeout(function() {
         window.s.stop();
-      }, 20000);
+      }, 13000);
     }
   }, false);
 

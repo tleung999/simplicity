@@ -14,7 +14,7 @@ Module.Places = function() {
 
       setTimeout(function() {
         $(document).trigger('next');
-      },15000);
+      },10000);
     });
   };
   //initialize this Module
