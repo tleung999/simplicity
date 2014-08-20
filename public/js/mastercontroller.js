@@ -47,15 +47,15 @@ MasterController.prototype = {
 
 MasterModel = function(){
   this.coreModules = [
-                     new Module.HelloUser()
+                     new Module.TwilioCallRecord()
+                    ,new Module.HelloUser()
                     ,new Module.Picture()
                     ,new Module.TagCanvas()
                     ,new Module.TwilioCall()
                     ,new Module.Cube()
                     ,new Module.RickRoll()
                     ,new Module.TwilioSMS()
-                    ,new Module.Places()
-                    ,new Module.TwilioCallRecord()];
+                    ,new Module.Places()];
 
 
   this.moduleList = this.insertPhysicsTransitions(this.coreModules);
