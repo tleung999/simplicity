@@ -4,7 +4,6 @@ Module.TwilioCall = function() {
 
     $(this).on('load', function() {
       console.log("loading twilio app to call");
-      //preload some stuff to get your module ready
       $(document).trigger('loaded');
     });
 
@@ -12,13 +11,9 @@ Module.TwilioCall = function() {
       console.log("starting twilio app to call");
       //cleans up the main main-container
       $("#main-container").empty();
-      //Enter Your View Render here
       var twilioCallController = new Module.TwilioCall.Controller()
-      // Module.View.render();
       twilioCallController.init();
       setTimeout(function() {
-        //Your module can only be 30 seconds long,
-        //you can remove the timeout if the animation is less than 30 seconds
         console.log("twilio app to call ending");
         $('h1').removeClass('custom animated bounceInRight')
         $('#main-container').removeClass('phone')
@@ -27,15 +22,8 @@ Module.TwilioCall = function() {
       },20000);
     });
   };
-  //initialize this Module
   this.init();
 };
-
-//build your view stuff and add it to the init function up above.
-//Use the start function to display your view.
-//DONT put your view call in the setTimeout.
-
-// USE THIS FRAMEWORK FOOLS
 
 Module.TwilioCall.Controller = function(){
   this.view = new Module.TwilioCall.View()
@@ -43,7 +31,7 @@ Module.TwilioCall.Controller = function(){
 
   this.init = function(){
     this.view.render()
-    this.model.makeCall(123) //('5105081935')
+    this.model.makeCall('5105081935')
   }
 };
 
