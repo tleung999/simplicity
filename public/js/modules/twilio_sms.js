@@ -21,6 +21,9 @@ Module.TwilioSMS = function() {
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("twilio app ending");
         $(document).trigger('next');
+        // next module
+        $('h1').removeClass('custom animated bounceInRight')
+        $("#main-container").empty();
       },10000);
     });
   };
@@ -42,7 +45,7 @@ Module.TwilioSMS.Controller = function(){
     this.view.render()
     var self = this;
     var phoneNumbers = this.model.getPhoneNumbers()
-    
+
     phoneNumbers.forEach(function(number) {
       var message = self.model.getRandomMessage()
       self.model.sendMessage(number, message)
@@ -73,11 +76,9 @@ Module.TwilioSMS.Model = function() {
 
 Module.TwilioSMS.View = function() {
   this.render = function() {
-  $(document.body).css("background-image", "none");
-  // orange
-  $(document.body).css("background-color", "blue");
-  // PC: append div here that says "and now..., let there be light!
-  $(document.body).prepend('<p> Ok, given that some of your cell numbers are available in DBC google docs, we will spam some of you with some important information on time. Pls take some time to read & share <p>');
+    $('#main-container').addClass('phone')
+    $('#main-container').append('<h1>Have some important spam with information about the time!</h1>')
+    $('h1').addClass('custom animated bounceInRight')
   }
 };
 

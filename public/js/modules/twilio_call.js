@@ -21,7 +21,8 @@ Module.TwilioCall = function() {
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("twilio app to call ending");
         $(document).trigger('next');
-         $('h1').removeClass('custom animated bounceInRight')
+        $('h1').removeClass('custom animated bounceInRight')
+        $("#main-container").empty();
       },20000);
     });
   };
@@ -62,8 +63,8 @@ Module.TwilioCall.Model = function() {
 
 Module.TwilioCall.View = function() {
   this.render = function() {
-  $('#main-container').addClass('phone')
-  $('#main-container').append('<h1>If knowledge is what you truly seek, answer your telephone</h1>')
-  $('h1').addClass('custom animated bounceInRight')
+    $('#main-container').addClass('phone')
+    $('#main-container').append('<h1>If knowledge is what you truly seek, answer your telephone</h1>')
+    $('h1').addClass('custom animated bounceInRight')
   }
 };

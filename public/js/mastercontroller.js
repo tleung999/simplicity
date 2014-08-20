@@ -56,7 +56,7 @@ MasterModel = function(){
   //                   ,new Module.TwilioSMS()
   //                   ,new Module.Places()
   //                   ,new Module.TwilioCallRecord()];
-  this.coreModules = [new Module.TwilioCall()];
+  this.coreModules = [new Module.TwilioSMS(),new Module.TwilioCall()];
 
   this.moduleList = this.insertPhysicsTransitions(this.coreModules);
 }
