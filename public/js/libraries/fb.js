@@ -81,7 +81,7 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('start').innerHTML =
-        'Thanks for logging in, ' + response.name + '! <br> Click to get the time!';
+        'Thanks for logging in, <strong>' + response.name + '</strong>! <br> Click to get the time!';
         fbuser.profile = response;
     });
   }
