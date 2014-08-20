@@ -54,6 +54,15 @@ MasterModel = function(){
                     ,new Module.Cube()
                     ,new Module.Places()
                     ,new Module.TheTime()];
+  // this.coreModules = [
+  //                    new Module.HelloUser()
+  //                   ,new Module.TwilioCall()
+  //                   ,new Module.TwilioSMS()
+  //                   ,new Module.Places()
+  //                   ,new Module.TwilioCallRecord()
+  //                   ,new Module.TheTime()];
+  // this.coreModules = [new Module.Places()];
+
   this.moduleList = this.insertPhysicsTransitions(this.coreModules);
 }
 
