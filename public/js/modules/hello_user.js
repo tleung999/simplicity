@@ -51,20 +51,8 @@ Module.HelloUser.View = function () {
   var userName = currentUserInfo.fbprofile.name
   var helloUserWithName = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello " + currentUserInfo.fbprofile.name + "! <br> You are " + compliment + "!</h1>";
   var helloUserNoName = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello! <br> You are " + compliment + "!</h1>";
-  // debugger
-
-  // var appendElementNoName = function(){
-  //   $("#main-container").append(helloUserNoName);
-  // }
-
-  // var appendElementWithName = function(){
-  //    $("#main-container").append(helloUserWithName);
-  // }
-
-
 
   setTimeout(function(){
-    debugger
     if(userName === undefined){
       $("#main-container").append(helloUserNoName);
     }
