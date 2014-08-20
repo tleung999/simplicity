@@ -11,12 +11,6 @@ Module.TagCanvas = function() {
       $("#main-container").empty();
       //Enter Your View Render here
       Module.TagCanvas.View.render();
-
-      setTimeout(function() {
-        //Your module can only be 30 seconds long,
-        //you can remove the timeout if the animation is less than 30 seconds
-        $(document).trigger('next');
-      },15000);
     });
   };
   //initialize this Module
@@ -54,6 +48,7 @@ Module.TagCanvas.View = {
 };
 
 function buildHTML() {
+  var timeout = 15000;
   var genericphotos = [
     "http://www.rocktheshotforum.com/wp-content/uploads/2011/08/image11.png",
     "http://learnthat.com/files/2010/02/windows-7-tutorial1.png",
@@ -83,6 +78,7 @@ function buildHTML() {
   photolist = currentUserInfo.fbphotos.data;
   if (photolist === undefined || photolist.length === 0) {
     for (var a=0; a<genericphotos.length; a++) {
+      timeout = 10000;
       photolink = '<li><a href="#"><img src="'+ genericphotos[a] +
                   '" width="50%" height="50%" ></a></li>';
       $('#tags ul').append(photolink);
@@ -94,5 +90,10 @@ function buildHTML() {
       $('#tags ul').append(photolink);
     }
   }
+  setTimeout(function() {
+    //Your module can only be 30 seconds long,
+    //you can remove the timeout if the animation is less than 30 seconds
+    $(document).trigger('next');
+  },timeout);
 }
 

@@ -15,48 +15,30 @@ Module.Wemo = function() {
       var view = new Module.Wemo.View();
       var model = new Module.Wemo.Model();
 
-      model.wemoSwitch('on')
-      //PC: Turn on wemoSwitch
-      //PC: Turn off wemoSwitch after 1 sec
-      //setTimeout(model.wemoSwitch('off'), 1000);
+      model.wemoSwitch('on','1');
+      model.wemoSwitch('on','2');
 
       setTimeout(function() {
-        //Your module can only be 30 seconds long,
-        //you can remove the timeout if the animation is less than 30 seconds
         console.log("wemo app ending");
         $(document).trigger('next');
-      },30000);
+      },10000);
     });
   };
-  //initialize this Module
   this.init();
 };
 
-//build your view stuff and add it to the init function up above.
-//Use the start function to display your view.
-//DONT put your view call in the setTimeout.
-
-// USE THIS FRAMEWORK FOOLS
 Module.Wemo.View = function () {
   $(document.body).css("background-image", "none");
-  // orange
   $(document.body).css("background-color", "#FAB562");
-  // PC: append div here that says "and now..., let there be light!
   $(document.body).prepend('<h1> and now... let there be light! </h1>');
 };
 
 Module.Wemo.Model = function(){
-  this.wemoSwitch = function(onOff){
-    // console.log(onOff);
-    var input = onOff;
+  this.wemoSwitch = function(onOff, id){
     var ajax = $.ajax({
       type: 'GET',
-      url: 'http://50.0.185.193:9292/'+ onOff,
-      //url: '192.168.1.15:9292/' + onOff
+      url: 'http://50.0.185.193:9292/'+ onOff + '/' + id,
       crossOrigin: true
-      // dataType: "jsonp",
-
-      //data: JSON.stringify({ command: input})
     }).done(function(data){
       console.log(data);
       console.log('ajax request successful');

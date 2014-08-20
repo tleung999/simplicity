@@ -34,7 +34,7 @@ MasterController.prototype = {
   triggerFirstModule: function(){
     if (this.loadCount === this.moduleList.length) {
       $(document).trigger('next');
-    };
+    }
   },
 
   startNextModule: function(){
@@ -42,7 +42,7 @@ MasterController.prototype = {
     this.moduleIndex++;
     this.view.setRandomBackgroundColor();
   }
-}
+};
 // ------------------------------------------------- //
 
 MasterModel = function(){
