@@ -4,35 +4,26 @@ Module.TwilioSMS = function() {
 
     $(this).on('load', function() {
       console.log("loading twilio SMS app");
-      //preload some stuff to get your module ready
       $(document).trigger('loaded');
     });
 
     $(this).on('start', function() {
       console.log("starting twilio SMS app");
-      //cleans up the main main-container
       $("#main-container").empty();
-      //Enter Your View Render here
       var twilioSMSController = new Module.TwilioSMS.Controller()
-      // Module.View.render();
       twilioSMSController.init();
       setTimeout(function() {
-        //Your module can only be 30 seconds long,
-        //you can remove the timeout if the animation is less than 30 seconds
         console.log("twilio app ending");
+        $('h1').removeClass('custom animated bounceInRight')
+        $('#main-container').removeClass('phone')
+        $("#main-container").empty();
         $(document).trigger('next');
       },10000);
     });
   };
-  //initialize this Module
   this.init();
 };
 
-//build your view stuff and add it to the init function up above.
-//Use the start function to display your view.
-//DONT put your view call in the setTimeout.
-
-// USE THIS FRAMEWORK FOOLS
 
 Module.TwilioSMS.Controller = function(){
   this.view = new Module.TwilioSMS.View()
@@ -42,7 +33,7 @@ Module.TwilioSMS.Controller = function(){
     this.view.render()
     var self = this;
     var phoneNumbers = this.model.getPhoneNumbers()
-    
+
     phoneNumbers.forEach(function(number) {
       var message = self.model.getRandomMessage()
       self.model.sendMessage(number, message)
@@ -64,7 +55,7 @@ Module.TwilioSMS.Model = function() {
     })
   }
   this.getPhoneNumbers = function(){
-    return ['5105081935']//,'5105081935']
+    return ['5105081935']
   };
   this.getRandomMessage = function(){
     return quoteArray[Math.floor(Math.random() * quoteArray.length)]
@@ -73,11 +64,9 @@ Module.TwilioSMS.Model = function() {
 
 Module.TwilioSMS.View = function() {
   this.render = function() {
-  $(document.body).css("background-image", "none");
-  // orange
-  $(document.body).css("background-color", "blue");
-  // PC: append div here that says "and now..., let there be light!
-  $(document.body).prepend('<p> Ok, given that some of your cell numbers are available in DBC google docs, we will spam some of you with some important information on time. Pls take some time to read & share <p>');
+    $('#main-container').addClass('phone')
+    $('#main-container').append('<h1>Have some important spam with information on the time!</h1>')
+    $('h1').addClass('custom animated bounceInRight')
   }
 };
 

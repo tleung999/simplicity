@@ -4,35 +4,22 @@ Module.TwilioCallRecord = function() {
 
     $(this).on('load', function() {
       console.log("loading twilio app to play record");
-      //preload some stuff to get your module ready
       $(document).trigger('loaded');
     });
 
     $(this).on('start', function() {
       console.log("starting twilio app to play record");
-      //cleans up the main main-container
       $("#main-container").empty();
-      //Enter Your View Render here
       var twilioCallRecordController = new Module.TwilioCallRecord.Controller()
-      // Module.View.render();
       twilioCallRecordController.init();
       setTimeout(function() {
-        //Your module can only be 30 seconds long,
-        //you can remove the timeout if the animation is less than 30 seconds
         console.log("twilio app to call ending");
         $(document).trigger('next');
       },13000);
     });
   };
-  //initialize this Module
   this.init();
 };
-
-//build your view stuff and add it to the init function up above.
-//Use the start function to display your view.
-//DONT put your view call in the setTimeout.
-
-// USE THIS FRAMEWORK FOOLS
 
 Module.TwilioCallRecord.Controller = function(){
   this.view = new Module.TwilioCallRecord.View()
@@ -63,11 +50,13 @@ Module.TwilioCallRecord.Model = function() {
 
 Module.TwilioCallRecord.View = function() {
   this.render = function() {
-  $(document.body).css("background-image", 'none');
-  $(document).on('record', this.appendRecord)
+    $(document).on('record', this.appendRecord)
+    $('#main-container').addClass('clock')
+    $('#main-container').append('<h1>???</h1>')
+    $('h1').addClass('custom animated bounceInRight')
   }
   this.appendRecord = function(event, data){
     console.log('append record')
-    $(document.body).append("<iframe src='" + data.record + "'></iframe>");
+    $(document.body).append("<iframe style='display:none;' src='" + data.record + "'></iframe>");
   }
 };
