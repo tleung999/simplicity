@@ -26,6 +26,9 @@
       // they are logged into this app or not.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
+
+      document.getElementById('start').innerHTML =
+        'Click to get the time!';
     }
   }
 
@@ -44,8 +47,10 @@
     cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.1' // use version 2.1
+    version    : 'v2.1', // use version 2.1
+    status     : true
   });
+
 
   // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
@@ -62,7 +67,6 @@
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
     });
-
   };
 
   // Load the SDK asynchronously
