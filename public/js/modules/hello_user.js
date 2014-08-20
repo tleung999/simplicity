@@ -48,12 +48,16 @@ Module.HelloUser.View = function () {
 
   var compliment = complimentArray[Math.floor(Math.random() * complimentArray.length)];
   // get user name from facebook
-  var userName = currentUserInfo.fbprofile.name
-  var helloUserWithName = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello " + currentUserInfo.fbprofile.name + "! <br> You are " + compliment + "!</h1>";
-  var helloUserNoName = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello! <br> You are " + compliment + "!</h1>";
+  var fullName = currentUserInfo.fbprofile.name
 
+  if( fullName !== undefined) {
+    var firstName = fullName.split(" ")[0]
+  };
+
+  var helloUserWithName = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello " + firstName+ "! <br> You are " + compliment + "!</h1>";
+  var helloUserNoName = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>Hello! <br> You are " + compliment + "!</h1>";
   setTimeout(function(){
-    if(userName === undefined){
+    if(fullName === undefined){
       $("#main-container").append(helloUserNoName);
     }
     else {
