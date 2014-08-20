@@ -49,12 +49,6 @@ Module.TheTime.Controller = function(view, model) {
   this.view = view;
   this.model = model;
   this.init();
-};
+    };
+  })();
 
-Module.TheTime.Controller.prototype = {
-  init: function(){
-    console.log("into Controller");
-    this.view.prototype.render();
-    // debugger
-  }
-};

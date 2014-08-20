@@ -36,7 +36,7 @@ Module.Cube.View = function() {
 };
 Module.Cube.View.prototype = {
   render: function() {
-    $('#main-container').css("height", "100%").css("width", "50%");
+    $('#main-container').css("height", "100%").css("width", "50%").css("background-color", "black");
   }
 };
 

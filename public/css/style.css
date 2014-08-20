@@ -1,38 +1,133 @@
-#userform {
-  margin: auto;
-  margin-top: -60px;
-  width: 30%;
-  text-align: center;
-}
+@media only screen and (min-width : 800px) {
 
-body {
-  background: black;
-  background-size: 100%;
-  height: 100%;
-}
+  #small-platform{
+    display: none;
+  }
 
-h1 {
+  #userform {
+    margin: auto;
+    margin-top: -60px;
+    width: 30%;
+    text-align: center;
+  }
+
+  body {
+    background: black;
+    background-size: 100%;
+    height: 100%;
+  }
+
+  h1 {
   font-family: Helvetica;
   text-align: center;
   color: #ededed;
   font-size: 7em;
   text-shadow: 2px 2px 4px #000000;
+  }
+
+  h3 {
+    font-family: Helvetica;
+    text-align: center;
+    color: #ededed;
+    font-size: 1em;
+  }
+
+  input {
+    height: 20px;
+  }
+
+  #status {
+    color: white;
+    text-align: center;
+  }
+
+  audio {
+     display:none;
+  }
+
+  #volume {
+    color: white;
+    padding-bottom: .4em;
+    padding-left: .4em;
+    float: left;
+    position: relative;
+  }
+
+  #start {
+    width: 190px;
+    height: 190px;
+    margin: 15px 15px 15px 15px;
+    text-align: center;
+    color: #ededed;
+    font-size: 1em;
+    border-radius: 50%;
+    background-color: rgba(16, 216, 252, 0.8);
+  }
+
+  #start:hover {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(16, 216, 252, 0.8);
+    -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(16, 216, 252, 0.8);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(16, 216, 252, 0.8);
+  }
+
+  #clock {
+    margin: auto;
+    padding: 20em;
+    display: block;
+  }
+
+
+  .background-image {
+    background: url("../../images/blurredsilhouette.png") no-repeat;
+    height: 1000px;
+    background-size: cover;
+  }
+
+  .disabled {
+     pointer-events: none;
+     cursor: default;
+     text-align: middle;
+     color: #ffffff;
+     width: 200px;
+     height: 50px;
+     border-radius: 20%;
+  }
+
+  .fireworks {
+    cursor: crosshair;
+    display: block;
+    opacity:0.7;
+  }
+}
+
+@media all and (max-width : 799px) {
+
+#small-platform{
+  display: block;
+  color: black;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 3em;
+}
+
+#userform {
+  display: none;
+}
+
+h1 {
+  display: none;
 }
 
 h3 {
-  font-family: Helvetica;
-  text-align: center;
-  color: #ededed;
-  font-size: 1em;
+  display: none;
 }
 
 input {
-  height: 20px;
+  display: none;
 }
 
 #status {
-  color: white;
-  text-align: center;
+  display: none;
 }
 
 audio {
@@ -40,29 +135,18 @@ audio {
 }
 
 #volume {
-  color: white;
-  padding-bottom: .4em;
-  padding-left: .4em;
-  float: left;
-  position: relative;
+  display: none;
 }
 
 #start {
-  width: 190px;
-  height: 190px;
-  margin: 15px 15px 15px 15px;
-  text-align: center;
-  color: #ededed;
-  font-size: 1em;
-  border-radius: 50%;
-  background-color: rgba(16, 216, 252, 0.8);
+  display: none;
 }
 
 #start:hover {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(16, 216, 252, 0.8);
-  -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(16, 216, 252, 0.8);
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(16, 216, 252, 0.8);
+  display: none;
 }
+<<<<<<< HEAD
+=======
 
 #clock {
   margin: auto;
@@ -100,4 +184,5 @@ audio {
 .custom {
   margin: 0;
   padding-top: 12%;
+>>>>>>> 7ba3fe8191831f726d8b8050e9c20bd8f325c21f
 }
