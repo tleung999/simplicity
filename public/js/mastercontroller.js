@@ -50,22 +50,13 @@ MasterModel = function(){
   //                    new Module.HelloUser()
   //                   ,new Module.Picture()
   //                   ,new Module.TagCanvas()
-  //                   ,new Module.RickRoll()
+  //                   ,new Module.TwilioCall()
   //                   ,new Module.Cube()
+  //                   ,new Module.RickRoll()
+  //                   ,new Module.TwilioSMS()
   //                   ,new Module.Places()
-  //                   ,new Module.TheTime()];
-  this.coreModules = [
-                     new Module.HelloUser()
-                    ,new Module.Picture()
-                    ,new Module.TagCanvas()
-                    ,new Module.TwilioCall()
-                    ,new Module.Cube()
-                    ,new Module.RickRoll()
-                    ,new Module.TwilioSMS()
-                    ,new Module.Places()
-                    ,new Module.TwilioCallRecord()
-                    ,new Module.TheTime()];
-  // this.coreModules = [new Module.Places()];
+  //                   ,new Module.TwilioCallRecord()];
+  this.coreModules = [new Module.TwilioCall()];
 
   this.moduleList = this.insertPhysicsTransitions(this.coreModules);
 }
