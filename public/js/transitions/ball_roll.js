@@ -42,7 +42,7 @@ Physics(function( world ){
     x: 140
     ,y: (canvasHeight/4)
     ,radius: 50
-    ,vx: .01 //speed of the ball's movement
+    ,vx: .02 //speed of the ball's movement
   });
 
   world.add( circle );

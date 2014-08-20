@@ -21,7 +21,7 @@ Module.TwilioCall = function() {
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("twilio app to call ending");
         $(document).trigger('next');
-      },50000);
+      },20000);
     });
   };
   //initialize this Module
