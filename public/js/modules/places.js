@@ -50,8 +50,8 @@ Module.Places.Controller.prototype = {
     var bounds = new google.maps.LatLngBounds();
 
     $('#main-container').append('<div id="title"><center>'+
-                                '<h1 style="margin:0px;">'+
-                                'Places you\'ve been</h1>'+
+                                '<h1 style="margin:0px,0px,0px,5px;">'+
+                                'Places you\'ve been...</h1>'+
                                 '</center></div>');
     $('#main-container').append('<div id="map"></div>');
     $('#map').css("height","800px");
@@ -87,7 +87,7 @@ Module.Places.Controller.prototype = {
       position: locations[iterator],
       map: map,
       draggable: false,
-      icon: currentUserInfo.fbprofilepic.data.url,
+      icon: '../images/poo.png',
       animation: google.maps.Animation.DROP
     }));
     iterator++;
