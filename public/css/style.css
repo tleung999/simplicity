@@ -1,12 +1,12 @@
 #userform {
   margin: auto;
-  margin-top: 50px;
+  margin-top: -60px;
   width: 30%;
+  text-align: center;
 }
 
 body {
-  background-image: url("../images/rubegoldberg.jpg");
-  background-repeat: no-repeat;
+  background: black;
   background-size: 100%;
   height: 100%;
 }
@@ -15,13 +15,14 @@ h1 {
   font-family: Helvetica;
   text-align: center;
   color: #ededed;
-  font-size: 10em;
+  font-size: 7em;
 }
 
 h3 {
   font-family: Helvetica;
-  text-align: left;
-  color: #F23E32;
+  text-align: center;
+  color: #ededed;
+  font-size: 1em;
 }
 
 input {
@@ -30,6 +31,7 @@ input {
 
 #status {
   color: white;
+  text-align: center;
 }
 
 audio {
@@ -38,8 +40,26 @@ audio {
 
 #volume {
   color: white;
-  padding: .5em;
+  padding-bottom: .4em;
+  padding-left: .4em;
   float: left;
+  position: relative;
 }
 
+#start {
+  width: 190px;
+  height: 190px;
+  margin: 15px 15px 15px 15px;
+  text-align: center;
+  color: #ededed;
+  font-size: 1em;
+  border-radius: 50%;
+  background-color: rgba(16, 216, 252, 0.8);
+}
+
+#start:hover {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(16, 216, 252, 0.8);
+  -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(16, 216, 252, 0.8);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(16, 216, 252, 0.8);
+}
 
