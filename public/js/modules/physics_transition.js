@@ -2,13 +2,11 @@ Module.PhysicsTransition = function() {
   var self = this;
   this.init = function() {
     $(this).on('load', function() {
-      console.log("loading transition");
       //preload some stuff to get your module ready
       $(document).trigger('loaded');
     });
 
     $(this).on('start', function() {
-      console.log("starting transition");
       //cleans up the main main-container
       $("#main-container").empty();
       //Enter Your Module Controller here
@@ -18,7 +16,6 @@ Module.PhysicsTransition = function() {
       setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
-        console.log("transition ending");
 
       },15000);
     });

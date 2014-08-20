@@ -1,8 +1,11 @@
-simplicity
+#What time is it?
+## We wrote the app for that. 
 
-DBC Final Project
+### Dev Bootcamp Final Project, Purple Martins 2014
 
-Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Rube_Goldberg_machine). It is modular in design in hopes of making it as easy as possible for public contributions!
+### Contributers: Alex White, Ariel Fogel, Justin Harnoss, Kendall Carrey, Tony Leung
+
+Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Rube_Goldberg_machine). It is modular in design in hopes of making it as easy as possible for public contributions.
 
 #How to make a succesful pull request to add an event to our machine:
 
@@ -31,22 +34,38 @@ Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Ru
 ###It should be pretty
 
 ##Technical guide
-1. Fork the repo to your Github account
-2. Clone the fork down onto your local machine
-3. Create a new file in public/js YOURMODULE.js (with the name of your module)
-4. Copy the contents of the file public/js/sample.js into YOURMODULE.js. This will serve as your template.
-5. Do not delete anything from the template file!(accept setTimeout, if your module is shorter than 30, which it should be!)
-6. Put your view in the render function in View, follow MVC as best you can.
-7. In public/js/mastercontroller.js, add the following line to the $(document).ready function:
+|Getting Started|
+|---------------|
+|Fork the repo to your Github account|
+|1. Clone the [fork] (https://help.github.com/articles/fork-a-repo) down onto your local machine|
+|2. This project requires Ruby 2.0, and bundler. |
+|3. Go into the project dir in the console|
+|4. Run: bundle |
+|5. Run: bundle exec shotgun |
+|6. The app will open on http://127.0.0.1:9393/ |
+
+|Adding your module|
+|------------------|
+|1. You can comment out the other modules to test on your module alone. |
+|2. Create a new file in public/js YOURMODULE.js (with the name of your module) |
+|3. Copy the contents of the file public/js/sample.js into YOURMODULE.js. This will serve as your template. |
+|4. Do not delete anything from the template file!(accept setTimeout, if your module is shorter than 30, which it should be!) |
+|5. Put your view in the render function in View, follow MVC as best you can. |
+|6. In public/js/mastercontroller.js, add the following line to the $(document).ready function:|
+
 ```javascript
   newYourModule = new Module.YourModule();
-```
-8. add newYourModule to the moduleList array.
+``` 
 
-9. Do not leave any variables that would pollute the global namespace.
-10. if your script includes any dependancies (besides jQuery) delete those libraries in your .done function
+ 7. add newYourModule to the moduleList array. 
+
+ 8. Do not leave any variables that would pollute the global namespace. 
+ 9. If your script includes any dependancies (besides jQuery) please clean out those libraries in your .done function. 
+
 
 ###Have Fun!!
+
+
 
 
 
