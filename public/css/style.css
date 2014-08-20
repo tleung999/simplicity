@@ -81,3 +81,15 @@ audio {
    cursor: default;
 }
 
+
+.phone {
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANElEQVQYV2NkYGCYCcTYQDqyHCMSBySBC8xEV4jNdLDJZCskyWqYJ1BoijxDPRPxBCMDAwBOQhcFekIunQAAAABJRU5ErkJggg==) repeat;
+  height: 900px;
+  background-size: 40px;
+  margin: 5%;
+}
+
+.custom {
+  margin: 0;
+  padding-top: 12%;
+}
