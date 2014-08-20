@@ -15,11 +15,10 @@ Module.Wemo = function() {
       var view = new Module.Wemo.View();
       var model = new Module.Wemo.Model();
 
+      model.wemoSwitch('on')
       //PC: Turn on wemoSwitch
-      model.wemoSwitch('on');
       //PC: Turn off wemoSwitch after 1 sec
       //setTimeout(model.wemoSwitch('off'), 1000);
-
 
       setTimeout(function() {
         //Your module can only be 30 seconds long,
@@ -43,7 +42,7 @@ Module.Wemo.View = function () {
   // orange
   $(document.body).css("background-color", "#FAB562");
   // PC: append div here that says "and now..., let there be light!
-  $(document.body).append('<h1> and now... let there be light! </h1>');
+  $(document.body).prepend('<h1> and now... let there be light! </h1>');
 };
 
 Module.Wemo.Model = function(){
@@ -52,12 +51,12 @@ Module.Wemo.Model = function(){
     var input = onOff;
     var ajax = $.ajax({
       type: 'GET',
-      url: 'http://192.168.1.15:9292/on',
+      url: 'http://50.0.185.193:9292/'+ onOff,
       //url: '192.168.1.15:9292/' + onOff
-      // crossOrigin: true,
+      crossOrigin: true
       // dataType: "jsonp",
 
-      data: JSON.stringify({ command: input})
+      //data: JSON.stringify({ command: input})
     }).done(function(data){
       console.log(data);
       console.log('ajax request successful');
