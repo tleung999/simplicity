@@ -23,7 +23,9 @@ Module.PhysicsTransition = function() {
 //DONT put your view call in the setTimeout.
 
 Module.PhysicsTransition.Model = function(){
-  this.transitionArray = ['js/transitions/ball_roll.js','js/transitions/crazy_dominoes.js'];
+  this.transitionArray = ['js/transitions/supermarket_catastrophe.js'
+                          ,'js/transitions/ball_roll.js'
+                          ,'js/transitions/crazy_dominoes.js'];
 }
 
 Module.PhysicsTransition.Model.prototype = {
