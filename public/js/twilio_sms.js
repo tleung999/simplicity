@@ -15,9 +15,8 @@ Module.TwilioSMS = function() {
       //Enter Your View Render here
       var twilioSMSController = new Module.TwilioSMS.Controller()
       // Module.View.render();
-
+      twilioSMSController.init();
       setTimeout(function() {
-        twilioSMSController.init();
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
         console.log("twilio app ending");
@@ -41,12 +40,12 @@ Module.TwilioSMS.Controller = function(){
 
   this.init = function(){
     this.view.render()
-
+    var self = this;
     var phoneNumbers = this.model.getPhoneNumbers()
     
     phoneNumbers.forEach(function(number) {
-      var mesage = this.model.getRandomMessage()
-      this.model.sendMessage(number, message)
+      var message = self.model.getRandomMessage()
+      self.model.sendMessage(number, message)
     });
 
   }
@@ -58,17 +57,17 @@ Module.TwilioSMS.Model = function() {
 
     var ajax = $.ajax({
       type: 'get',
-      url: 'http://dry-fortress-5128.herokuapp.com/message/new',
+      url: 'http://secure-temple-4125.herokuapp.com/message/new',
       data: {phone: number, message: message}
     }).done(function(data){
       console.log ('message sent')
     })
   }
   this.getPhoneNumbers = function(){
-    ['5105081935']
+    return ['5105081935']//,'5105081935']
   };
   this.getRandomMessage = function(){
-    ['test message']
+    return quoteArray[Math.floor(Math.random() * quoteArray.length)]
   }
 };
 
@@ -78,6 +77,18 @@ Module.TwilioSMS.View = function() {
   // orange
   $(document.body).css("background-color", "blue");
   // PC: append div here that says "and now..., let there be light!
-  $(document.body).prepend('<h1> Check your phone for the real story! </h1>');
+  $(document.body).prepend('<p> Ok, given that some of your cell numbers are available in DBC google docs, we will spam some of you with some important information on time. Pls take some time to read & share <p>');
   }
 };
+
+quoteArray = [
+  "Clocks slay time... time is dead as long as it is being clicked off by little wheels; only when the clock stops does time come to life. ~William Faulkner"
+  ,"Time is what prevents everything from happening at once. ~John Archibald Wheeler"
+  ,"The clock talked loud. I threw it away, it scared me what it talked. ~Tillie Olsen, Tell Me a Riddle"
+  ,"Men talk of killing time, while time quietly kills them. ~Dion Boucicault"
+  ,"Who forces time is pushed back by time; who yields to time finds time on his side. ~The Talmud"
+  ,"How did it get so late so soon? ― Dr. Seuss"
+  ,"Here we are, trapped in the amber of the moment. There is no why.― Kurt Vonnegut"
+  ,"Time is an illusion. ― Albert Einstein"
+  ,"And therein lies the whole of man's plight. Human time does not turn in a circle; it runs ahead in a straight line. That is why man cannot be happy: happiness is the longing for repetition. ― Milan Kundera, The Unbearable Lightness of Being"
+  ];
