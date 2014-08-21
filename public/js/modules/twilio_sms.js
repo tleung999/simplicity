@@ -54,7 +54,7 @@ Module.TwilioSMS.Model = function() {
     })
   }
   this.getPhoneNumbers = function(){
-    return ['5105081935']
+    return ['123']//['5105081935']
   };
   this.getRandomMessage = function(){
     return quoteArray[Math.floor(Math.random() * quoteArray.length)]

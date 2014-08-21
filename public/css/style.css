@@ -145,8 +145,6 @@ audio {
 #start:hover {
   display: none;
 }
-<<<<<<< HEAD
-=======
 
 #clock {
   margin: auto;
@@ -167,21 +165,21 @@ audio {
 }
 
 
-+.phone {
-+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANElEQVQYV2NkYGCYCcTYQDqyHCMSBySBC8xEV4jNdLDJZCskyWqYJ1BoijxDPRPxBCMDAwBOQhcFekIunQAAAABJRU5ErkJggg==) repeat;
-+  height: 900px;
-+  background-size: 40px;
-+  margin: 5%;
-+}
-+
-+.custom {
-+  margin: 0;
-+  padding-top: 12%;
-+}
+.phone {
+  background-image: url('../../images/phone.png') repeat;
+  height: 900px;
+  background-size: 40px;
+  margin: 5%;
+}
+
+.custom {
+  margin: 0;
+  padding-top: 12%;
+}
 
 
 .clock {
-  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAARElEQVQYV2NkIBIwoqmbicZPh/GRFYIUwSWgCuBiMIXIitA1gPkUKQTZimEDNhPRwwHFanRTYIoxPIMsgWwi1uDBG/QAtSgRC4DWtMQAAAAASUVORK5CYII=) repeat;
+  background-image: url('../../images/clock.png') repeat;
   height: 900px;
   background-size: 40px;
   margin: 5%;
