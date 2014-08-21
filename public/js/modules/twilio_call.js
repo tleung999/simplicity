@@ -3,18 +3,14 @@ Module.TwilioCall = function() {
   this.init = function() {
 
     $(this).on('load', function() {
-      console.log("loading twilio app to call");
       $(document).trigger('loaded');
     });
 
     $(this).on('start', function() {
-      console.log("starting twilio app to call");
-      //cleans up the main main-container
       $("#main-container").empty();
       var twilioCallController = new Module.TwilioCall.Controller()
       twilioCallController.init();
       setTimeout(function() {
-        console.log("twilio app to call ending");
         $('h1').removeClass('custom animated bounceInRight')
         $('#main-container').removeClass('phone')
         $("#main-container").empty();
@@ -31,7 +27,7 @@ Module.TwilioCall.Controller = function(){
 
   this.init = function(){
     this.view.render()
-    this.model.makeCall('5105081935')
+    this.model.makeCall('123')//('5105081935')
   }
 };
 
