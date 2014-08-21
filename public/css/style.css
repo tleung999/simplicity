@@ -167,22 +167,22 @@ audio {
 }
 
 
-.phone {
-  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANElEQVQYV2NkYGCYCcTYQDqyHCMSBySBC8xEV4jNdLDJZCskyWqYJ1BoijxDPRPxBCMDAwBOQhcFekIunQAAAABJRU5ErkJggg==) repeat;
-  height: 900px;
-  background-size: 40px;
-  margin: 5%;
-}
++.phone {
++  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANElEQVQYV2NkYGCYCcTYQDqyHCMSBySBC8xEV4jNdLDJZCskyWqYJ1BoijxDPRPxBCMDAwBOQhcFekIunQAAAABJRU5ErkJggg==) repeat;
++  height: 900px;
++  background-size: 40px;
++  margin: 5%;
++}
++
++.custom {
++  margin: 0;
++  padding-top: 12%;
++}
+
 
 .clock {
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAARElEQVQYV2NkIBIwoqmbicZPh/GRFYIUwSWgCuBiMIXIitA1gPkUKQTZimEDNhPRwwHFanRTYIoxPIMsgWwi1uDBG/QAtSgRC4DWtMQAAAAASUVORK5CYII=) repeat;
   height: 900px;
   background-size: 40px;
   margin: 5%;
-}
-
-.custom {
-  margin: 0;
-  padding-top: 12%;
->>>>>>> 7ba3fe8191831f726d8b8050e9c20bd8f325c21f
 }
