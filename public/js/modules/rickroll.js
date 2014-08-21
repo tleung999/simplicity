@@ -14,11 +14,17 @@ Module.RickRoll = function() {
       var rickroll = new Module.RickRoll.Controller(Module.RickRoll.View);
       // Module.View.render();
 
+      rickroll.view.displayIntro();
+
+      setTimeout(function(){
+        rickroll.init();
+      }, 6000);
+
       setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
         $(document).trigger('next');
-      },21000);
+      },27000);
     });
   };
   //initialize this Module
@@ -34,13 +40,26 @@ Module.RickRoll.View = function() {
 };
 Module.RickRoll.View.prototype = {
   render: function() {
-        $('#main-container').append('<center><iframe style="padding-top:12%;" frameborder="0" width="680" height="420" src="http://www.dailymotion.com/embed/video/xsdji?autoPlay=1&logo=0&info=0&highlight=ffffff"></iframe></center>');
+    $('#main-container').append('<center><iframe frameborder="0" width="680" height="420" src="http://www.dailymotion.com/embed/video/xsdji?autoPlay=1&logo=0&info=0&highlight=ffffff"></iframe></center>');
+  },
+  displayIntro: function(){
+    // clear background image
+    $(document.body).css("background-image", "none");
+    var message = "Times have changed...or do you still dance like this?";
+    var module_intro = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>" + message + "</h1>";
+
+    setTimeout(function(){
+      $("#main-container").append(module_intro);
+      }, 500);
+
+    setTimeout(function(){
+      $("#main-container").empty();
+    },5500);
   }
 };
 
 Module.RickRoll.Controller = function(view) {
   this.view = new view;
-  this.init();
 };
 
 Module.RickRoll.Controller.prototype = {

@@ -9,8 +9,9 @@ Module.Picture = function() {
     $(this).on('start', function() {
         //Enter Your View render here
       $("#main-container").empty();
-      creatingPage();
-      timeout = setTimeout(function() {
+      displayIntro();
+      setTimeout(function(){creatingPage()}, 6000);
+      setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
         $(document).trigger('next');
@@ -108,7 +109,6 @@ function setupCamera(){
     canvas.height = height;
     canvas.getContext('2d').drawImage(video, 0, 0, width, height);
     var data = canvas.toDataURL('image/png');
-    // debugger
     photo.setAttribute('src', data);
   }
 
@@ -134,3 +134,19 @@ function canvasFollowingMouse(){
   $('#photo').css("top", (mousePosY - 30))
 }
 }
+
+
+function displayIntro() {
+  // clear background image
+  $(document.body).css("background-image", "none");
+  var message = "Time is overrated. Be Zen. Savor this very moment. This will help you...3-2-1 smile!";
+  var module_intro = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>" + message + "</h1>";
+
+  setTimeout(function(){
+    $("#main-container").append(module_intro);
+    }, 500);
+
+  setTimeout(function(){
+    $("#main-container").empty();
+  },5500);
+};
