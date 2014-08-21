@@ -10,7 +10,11 @@ Module.TagCanvas = function() {
       //cleans up the main main-container
       $("#main-container").empty();
       //Enter Your View Render here
-      Module.TagCanvas.View.render();
+      Module.TagCanvas.View.displayIntro();
+
+      setTimeout(function(){
+        Module.TagCanvas.View.render()
+      }, 6000);
 
       setTimeout(function() {
         //Your module can only be 30 seconds long,
@@ -50,6 +54,21 @@ Module.TagCanvas.View = {
         // something went wrong, hide the canvas container
         $('#main-container').css("display","none");
     }
+  },
+
+  displayIntro: function(){
+    // clear background image
+    $(document.body).css("background-image", "none");
+    var message = "Oh, look at what we found! Good old times...you looked younger back then";
+    var module_intro = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>" + message + "</h1>";
+    
+    setTimeout(function(){
+      $("#main-container").append(module_intro);
+      }, 500);
+  
+    setTimeout(function(){
+      $("#main-container").empty();
+    },5500);
   }
 };
 
@@ -93,6 +112,5 @@ function buildHTML() {
                   '" width="50%" height="50%" ></a></li>';
       $('#tags ul').append(photolink);
     }
-  }
+  };
 }
-
