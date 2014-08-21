@@ -1,5 +1,5 @@
 #What time is it?
-## We wrote the app for that. 
+## We wrote the app for that.
 
 ### Dev Bootcamp Final Project, Purple Martins 2014
 
@@ -7,7 +7,7 @@
 
 Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Rube_Goldberg_machine). It is modular in design in hopes of making it as easy as possible for public contributions.
 
-#How to make a succesful pull request to add an event to our machine:
+#How to make a successful pull request to add an event to our machine:
 
 ##Style guide
 
@@ -55,12 +55,12 @@ Simplicity is a web based [Rube Golberg Machine](http://en.wikipedia.org/wiki/Ru
 
 ```javascript
   newYourModule = new Module.YourModule();
-``` 
+```
 
- 7. add newYourModule to the moduleList array. 
+ 7. add newYourModule to the moduleList array.
 
- 8. Do not leave any variables that would pollute the global namespace. 
- 9. If your script includes any dependancies (besides jQuery) please clean out those libraries in your .done function. 
+ 8. Do not leave any variables that would pollute the global namespace.
+ 9. If your script includes any dependancies (besides jQuery) please clean out those libraries in your .done function.
 
 
 ###Have Fun!!
