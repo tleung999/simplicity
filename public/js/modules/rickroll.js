@@ -40,7 +40,7 @@ Module.RickRoll.View = function() {
 };
 Module.RickRoll.View.prototype = {
   render: function() {
-    $('#main-container').append('<center><iframe frameborder="0" width="680" height="420" src="http://www.dailymotion.com/embed/video/xsdji?autoPlay=1&logo=0&info=0&highlight=ffffff"></iframe></center>');
+    $('#main-container').append('<center><video autoplay><source src="/video/RickRoll.mp4" type="video/mp4"></source></video></center>');
   },
   displayIntro: function(){
     // clear background image
