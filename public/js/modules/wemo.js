@@ -1,36 +1,47 @@
 Module.Wemo = function() {
-  var self = this;
   this.init = function() {
-
     $(this).on('load', function() {
-      console.log("loading wemo app");
-      //preload some stuff to get your module ready
       $(document).trigger('loaded');
     });
 
     $(this).on('start', function() {
-      console.log("starting wemo app");
-      //cleans up the main main-container
       $("#main-container").empty();
       var view = new Module.Wemo.View();
       var model = new Module.Wemo.Model();
-
+      view.render();
+      //trigger wemo device1
       model.wemoSwitch('on','1');
-      model.wemoSwitch('on','2');
-
       setTimeout(function() {
-        console.log("wemo app ending");
-        $(document).trigger('next');
-      },10000);
+        //change screen
+        this.change_render();
+        //trigger wemo device2
+        model.wemoSwitch('on','2');
+        setTimeout(function() {
+          $(document).trigger('next');
+        },5000);
+      }.bind(view),5000);
+
     });
   };
   this.init();
 };
 
 Module.Wemo.View = function () {
-  $(document.body).css("background-image", "none");
-  $(document.body).css("background-color", "#FAB562");
-  $(document.body).prepend('<h1> and now... let there be light! </h1>');
+  this.render = function(){
+    $('#main-container').css({
+                          'background-image': 'none',
+                          'background-color': '#000000',
+                          height: '380px',
+                          'margin-top': '-75px',
+                          'padding': '250px'
+                          });
+    $('#main-container').prepend('<h1> Wait for it........... </h1>');
+  };
+  this.change_render = function(){
+    $("#main-container").empty();
+    $("#main-container").removeAttr("style");
+    $('#main-container').prepend('<h1> Congratulations </h1>');
+  };
 };
 
 Module.Wemo.Model = function(){
@@ -39,9 +50,6 @@ Module.Wemo.Model = function(){
       type: 'GET',
       url: 'http://50.0.185.193:9292/'+ onOff + '/' + id,
       crossOrigin: true
-    }).done(function(data){
-      console.log(data);
-      console.log('ajax request successful');
-    });
+    }).done(function(data){});
   };
 };
