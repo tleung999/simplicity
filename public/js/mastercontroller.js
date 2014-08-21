@@ -3,6 +3,7 @@ $(document).ready(function() {
   master = new MasterController(MasterModel, MasterView);
   new MasterBinder({start: '#start'}, master).bindToSelectors();
   MusicController();
+  WemoOff();
 });
 
 Module = {};
@@ -55,8 +56,8 @@ MasterModel = function(){
                     ,new Module.RickRoll()
                     ,new Module.TwilioSMS()
                     ,new Module.Places()
-                    ,new Module.TwilioCallRecord()];
-
+                    ,new Module.TwilioCallRecord()
+                    ,new Module.Wemo()];
 
   this.moduleList = this.insertPhysicsTransitions(this.coreModules);
 }
@@ -93,7 +94,7 @@ function CurrentUserInfo() {
   this.fbphotos = fbuser.photos;
   this.fbposts = fbuser.posts;
   this.fbplaces = fbuser.places;
-  this.fbprofilepic = fbuser.profilepic
+  this.fbprofilepic = fbuser.profilepic;
 }
 
 //  --------------------------------------- //

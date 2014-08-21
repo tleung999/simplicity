@@ -33,7 +33,6 @@ Module.TwilioSMS.Controller = function(){
     this.view.render()
     var self = this;
     var phoneNumbers = this.model.getPhoneNumbers()
-
     phoneNumbers.forEach(function(number) {
       var message = self.model.getRandomMessage()
       self.model.sendMessage(number, message)
