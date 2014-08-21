@@ -1,3 +1,5 @@
+var timeout;
+
 Module.Picture = function() {
   var self = this;
   this.init = function() {
@@ -11,11 +13,11 @@ Module.Picture = function() {
       $("#main-container").empty();
       displayIntro();
       setTimeout(function(){creatingPage()}, 6000);
-      setTimeout(function() {
+      timeout = setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
         $(document).trigger('next');
-      },8000);
+      },15000);
     });
   };
   //initialize this Module
