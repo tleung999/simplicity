@@ -67,7 +67,7 @@ Module.TagCanvas.View = {
 };
 
 function buildHTML() {
-  var timeout = 15000;
+  var timeout = 7000;
   var genericphotos = [
     "http://www.rocktheshotforum.com/wp-content/uploads/2011/08/image11.png",
     "http://learnthat.com/files/2010/02/windows-7-tutorial1.png",
@@ -97,7 +97,7 @@ function buildHTML() {
   photolist = currentUserInfo.fbphotos.data;
   if (photolist === undefined || photolist.length === 0) {
     for (var a=0; a<genericphotos.length; a++) {
-      timeout = 10000;
+      timeout = 5000;
       photolink = '<li><a href="#"><img src="'+ genericphotos[a] +
                   '" width="50%" height="50%" ></a></li>';
       $('#tags ul').append(photolink);
