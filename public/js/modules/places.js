@@ -10,11 +10,17 @@ Module.Places = function() {
     $(this).on('start', function() {
       //cleans up the main main-container
       $("#main-container").empty();
-      new Module.Places.Controller(Module.Places.View, Module.Places.Model);
+      var modulePlacesController = new Module.Places.Controller(Module.Places.View, Module.Places.Model);
+      
+      modulePlacesController.view.displayIntro();
+
+      setTimeout(function(){
+        modulePlacesController.init()
+      }, 6000);
 
       setTimeout(function() {
         $(document).trigger('next');
-      },10000);
+      },16000);
     });
   };
   //initialize this Module
@@ -29,17 +35,27 @@ Module.Places = function() {
 Module.Places.Model = function() {
 };
 
-Module.Places.View = function() {
-};
-Module.Places.View.prototype = {
-  render: function() {
+Module.Places.View = {
+
+  displayIntro: function(){
+    // clear background image
+    $(document.body).css("background-image", "none");
+    var message = "Let's go back in time...have you been travelling?";
+    var module_intro = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>" + message + "</h1>";
+    
+    setTimeout(function(){
+      $("#main-container").append(module_intro);
+      }, 500);
+  
+    setTimeout(function(){
+      $("#main-container").empty();
+    },5500);
   }
 };
 
 Module.Places.Controller = function(view, model) {
   this.view = view;
   this.model = model;
-  this.init();
 };
 
 Module.Places.Controller.prototype = {
