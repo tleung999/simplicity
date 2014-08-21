@@ -11,7 +11,7 @@ Module.Places = function() {
       //cleans up the main main-container
       $("#main-container").empty();
       var modulePlacesController = new Module.Places.Controller(Module.Places.View, Module.Places.Model);
-      
+
       modulePlacesController.view.displayIntro();
 
       setTimeout(function(){
@@ -20,7 +20,7 @@ Module.Places = function() {
 
       setTimeout(function() {
         $(document).trigger('next');
-      },16000);
+      },12000);
     });
   };
   //initialize this Module
@@ -42,11 +42,11 @@ Module.Places.View = {
     $(document.body).css("background-image", "none");
     var message = "Let's go back in time...have you been travelling?";
     var module_intro = "<h1 class='animated bounceInRight' style='font-family:Helvetica;color:black'>" + message + "</h1>";
-    
+
     setTimeout(function(){
       $("#main-container").append(module_intro);
       }, 500);
-  
+
     setTimeout(function(){
       $("#main-container").empty();
     },5500);
