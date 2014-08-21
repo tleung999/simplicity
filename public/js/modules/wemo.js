@@ -19,7 +19,7 @@ Module.Wemo = function() {
         setTimeout(function() {
           $(document).trigger('next');
         },5000);
-      }.bind(view),5000);
+      }.bind(view),2000);
 
     });
   };
