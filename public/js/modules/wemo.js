@@ -40,7 +40,7 @@ Module.Wemo.View = function () {
   this.change_render = function(){
     $("#main-container").empty();
     $("#main-container").removeAttr("style");
-    $('#main-container').prepend('<h1> Congratulations </h1>');
+    $('#main-container').prepend('<h1> The Time Is... </h1>');
   };
 };
 
