@@ -8,12 +8,14 @@ Module.TwilioCall = function() {
 
     $(this).on('start', function() {
       $("#main-container").empty();
+      $('#audio')[0].volume = .1;
       var twilioCallController = new Module.TwilioCall.Controller()
       twilioCallController.init();
       setTimeout(function() {
         $('h1').removeClass('custom animated bounceInRight')
         $('#main-container').removeClass('phone')
         $("#main-container").empty();
+        $('#audio')[0].volume = 1;
         $(document).trigger('next');
       },20000);
     });

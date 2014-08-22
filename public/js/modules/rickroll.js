@@ -10,19 +10,20 @@ Module.RickRoll = function() {
     $(this).on('start', function() {
       //cleans up the main main-container
       $("#main-container").empty();
-      //Enter Your View Render here
       var rickroll = new Module.RickRoll.Controller(Module.RickRoll.View);
       // Module.View.render();
 
       rickroll.view.displayIntro();
 
       setTimeout(function(){
+        $('#audio')[0].volume = 0;
         rickroll.init();
       }, 6000);
 
       setTimeout(function() {
         //Your module can only be 30 seconds long,
         //you can remove the timeout if the animation is less than 30 seconds
+        $('#audio')[0].volume = 1;
         $(document).trigger('next');
       },27000);
     });

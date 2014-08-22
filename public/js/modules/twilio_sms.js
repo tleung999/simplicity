@@ -7,10 +7,12 @@ Module.TwilioSMS = function() {
     });
 
     $(this).on('start', function() {
+      $('#audio')[0].volume = .1;
       $("#main-container").empty();
       var twilioSMSController = new Module.TwilioSMS.Controller()
       twilioSMSController.init();
       setTimeout(function() {
+        $('#audio')[0].volume = 1;
         $('h1').removeClass('custom animated bounceInRight')
         $('#main-container').removeClass('phone')
         $("#main-container").empty();
@@ -34,7 +36,6 @@ Module.TwilioSMS.Controller = function(){
       var message = self.model.getRandomMessage()
       self.model.sendMessage(number, message)
     });
-
   }
 };
 

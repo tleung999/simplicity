@@ -7,10 +7,12 @@ Module.TwilioCallRecord = function() {
     });
 
     $(this).on('start', function() {
+      $('#audio')[0].volume = .1;
       $("#main-container").empty();
       var twilioCallRecordController = new Module.TwilioCallRecord.Controller()
       twilioCallRecordController.init();
       setTimeout(function() {
+        $('#audio')[0].volume = 1;
         $(document).trigger('next');
       },13000);
     });
