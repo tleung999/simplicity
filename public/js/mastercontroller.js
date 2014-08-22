@@ -66,7 +66,7 @@ MasterModel.prototype = {
   insertPhysicsTransitions: function(moduleList) {
     zippedList = [moduleList[0]];
     for (var i = 1, l = moduleList.length; i<l;i++){
-      zippedList.push(new Module.PhysicsTransition(), moduleList[i]);
+      zippedList.push(new Module.PhysicsTransition(i%3), moduleList[i]);
     }
     return zippedList;
   }
