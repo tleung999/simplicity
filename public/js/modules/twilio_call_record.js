@@ -8,12 +8,12 @@ Module.TwilioCallRecord = function() {
     });
 
     $(this).on('start', function() {
-      console.log("starting twilio app to play record");
+      $('#audio')[0].volume = .1;
       $("#main-container").empty();
       var twilioCallRecordController = new Module.TwilioCallRecord.Controller()
       twilioCallRecordController.init();
       setTimeout(function() {
-        console.log("twilio app to call ending");
+        $('#audio')[0].volume = 1;
         $(document).trigger('next');
       },13000);
     });

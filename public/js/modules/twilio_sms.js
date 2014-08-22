@@ -3,7 +3,7 @@ Module.TwilioSMS = function() {
   this.init = function() {
 
     $(this).on('load', function() {
-      console.log("loading twilio SMS app");
+      $('#audio')[0].volume = .5;
       $(document).trigger('loaded');
     });
 
@@ -13,7 +13,7 @@ Module.TwilioSMS = function() {
       var twilioSMSController = new Module.TwilioSMS.Controller()
       twilioSMSController.init();
       setTimeout(function() {
-        console.log("twilio app ending");
+        $('#audio')[0].volume = 1;
         $('h1').removeClass('custom animated bounceInRight')
         $('#main-container').removeClass('phone')
         $("#main-container").empty();
