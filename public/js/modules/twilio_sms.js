@@ -3,17 +3,14 @@ Module.TwilioSMS = function() {
   this.init = function() {
 
     $(this).on('load', function() {
-      console.log("loading twilio SMS app");
       $(document).trigger('loaded');
     });
 
     $(this).on('start', function() {
-      console.log("starting twilio SMS app");
       $("#main-container").empty();
       var twilioSMSController = new Module.TwilioSMS.Controller()
       twilioSMSController.init();
       setTimeout(function() {
-        console.log("twilio app ending");
         $('h1').removeClass('custom animated bounceInRight')
         $('#main-container').removeClass('phone')
         $("#main-container").empty();
@@ -43,8 +40,6 @@ Module.TwilioSMS.Controller = function(){
 
 Module.TwilioSMS.Model = function() {
   this.sendMessage = function(number, message){
-    console.log('sending message to ' + number)
-
     var ajax = $.ajax({
       type: 'get',
       url: 'http://secure-temple-4125.herokuapp.com/message/new',
