@@ -41,6 +41,8 @@ Module.Wemo.View = function () {
     $("#main-container").empty();
     $("#main-container").removeAttr("style");
     $('#main-container').prepend('<h1> The Time Is... </h1>');
+    $('#audio')[0].volume = 0;
+    $('body').append("<audio control volume='0' id='cuckoo' autoplay='true' src='music/cuckoo-clock.mp3'>");
   };
 };
 
