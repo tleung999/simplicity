@@ -56,7 +56,7 @@ Physics({ timestep: 3 }, function (world) {
     projectile = Physics.body('circle', {
         x: -20
         ,y: viewHeight - 150
-        ,vx: 2
+        ,vx: 5
         ,mass: 4
         ,radius: 20
         ,restitution: 0.99

@@ -1,4 +1,4 @@
-Module.PhysicsTransition = function() {
+Module.PhysicsTransition = function(moduleIndex) {
   var self = this;
   this.init = function() {
     $(this).on('load', function() {
@@ -11,7 +11,7 @@ Module.PhysicsTransition = function() {
       $("#main-container").empty();
       //Enter Your Module Controller here
       new Module.PhysicsTransition.Controller(Module.PhysicsTransition.View
-                                              ,Module.PhysicsTransition.Model);
+                                              ,Module.PhysicsTransition.Model, moduleIndex);
     });
   };
   //initialize this Module
@@ -33,19 +33,23 @@ Module.PhysicsTransition.Model.prototype = {
     var transitionArrayLength = this.transitionArray.length;
     var randomIndex = Math.floor((Math.random() * transitionArrayLength));
     return this.transitionArray[randomIndex];
+  },
+  produceNextTransition: function(transitionIndex){
+    return this.transitionArray[transitionIndex];
   }
 }
 // -------------------------------------------------------------- //
 // -------------------------------------------------------------- //
-Module.PhysicsTransition.Controller = function(view, model) {
+Module.PhysicsTransition.Controller = function(view, model, moduleIndex) {
   this.view  = new view;
   this.model = new model;
+  this.moduleIndex = moduleIndex;
   this.init();
 }
 
 Module.PhysicsTransition.Controller.prototype = {
   init: function(){
-    var transition = this.model.produceRandomTransition();
+    var transition = this.model.produceNextTransition(this.moduleIndex);
     this.view.render(transition);
   }
 }

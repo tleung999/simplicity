@@ -43,7 +43,7 @@ Physics(function( world ){
   var circle = Physics.body('circle', {
     x: 50,
     y: viewHeight-200,
-    vx: .08,
+    vx: .2,
     radius: 20
   });
 
