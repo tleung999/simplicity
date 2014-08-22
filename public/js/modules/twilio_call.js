@@ -36,14 +36,11 @@ Module.TwilioCall.Controller = function(){
 Module.TwilioCall.Model = function() {
 
   this.makeCall = function(phone){
-    console.log('making call to ' + phone)
-
     var ajax = $.ajax({
       type: 'get',
       url: 'http://secure-temple-4125.herokuapp.com/call/new',
       data: {phone: phone}
     }).done(function(data){
-      console.log ('call completed')
     })
   }
 };

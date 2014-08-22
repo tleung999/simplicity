@@ -3,7 +3,6 @@ Module.TwilioCallRecord = function() {
   this.init = function() {
 
     $(this).on('load', function() {
-      console.log("loading twilio app to play record");
       $(document).trigger('loaded');
     });
 
@@ -34,14 +33,12 @@ Module.TwilioCallRecord.Controller = function(){
 Module.TwilioCallRecord.Model = function() {
 
   this.getCallRecord = function(){
-    console.log('fetching record...')
 
     var ajax = $.ajax({
       type: 'get',
       url: 'http://secure-temple-4125.herokuapp.com/call/record',
       dataType: 'json'
     }).done(function(data){
-      console.log ('record fetched')
       $(document).trigger('record', data)
 
     })
@@ -56,7 +53,6 @@ Module.TwilioCallRecord.View = function() {
     $('h1').addClass('custom animated tada')
   }
   this.appendRecord = function(event, data){
-    console.log('append record')
     $(document.body).append("<iframe style='display:none;' src='" + data.record + "'></iframe>");
   }
 };

@@ -3,12 +3,11 @@ Module.TwilioSMS = function() {
   this.init = function() {
 
     $(this).on('load', function() {
-      $('#audio')[0].volume = .5;
       $(document).trigger('loaded');
     });
 
     $(this).on('start', function() {
-      console.log("starting twilio SMS app");
+      $('#audio')[0].volume = .1;
       $("#main-container").empty();
       var twilioSMSController = new Module.TwilioSMS.Controller()
       twilioSMSController.init();
@@ -37,14 +36,11 @@ Module.TwilioSMS.Controller = function(){
       var message = self.model.getRandomMessage()
       self.model.sendMessage(number, message)
     });
-
   }
 };
 
 Module.TwilioSMS.Model = function() {
   this.sendMessage = function(number, message){
-    console.log('sending message to ' + number)
-
     var ajax = $.ajax({
       type: 'get',
       url: 'http://secure-temple-4125.herokuapp.com/message/new',
