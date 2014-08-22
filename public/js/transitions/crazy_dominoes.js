@@ -72,6 +72,6 @@ Physics(function( world ){
     Physics.util.ticker.stop();
     // console.log("finished with crazy dominoes")
     $(document).trigger('next');
-  },10000);
+  },6000);
 
 })
