@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var currentUserInfo;
-  master = new MasterController(MasterModel, MasterView);
+  varmaster = new MasterController(MasterModel, MasterView);
   new MasterBinder({start: '#start'}, master).bindToSelectors();
   MusicController();
   WemoOff();
